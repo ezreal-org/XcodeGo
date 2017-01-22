@@ -16,5 +16,11 @@ ntiss::~ntiss()
 void ntiss::on_pushButton_clicked()
 {
     ui->pushButton->setText("hello tiankai");
-    QMessageBox::about(NULL, "About", "good night");
+    QMessageBox::about(NULL, "About", "fuck");
+}
+
+void ntiss::on_pushButton_3_clicked()
+{
+    ui->pushButton->setText("hello tiankai");
+    QMessageBox::about(NULL, "About", "!!!");
 }

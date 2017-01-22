@@ -17,6 +17,7 @@
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QRadioButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
@@ -28,6 +29,9 @@ class Ui_ntiss
 public:
     QWidget *centralWidget;
     QPushButton *pushButton;
+    QRadioButton *radioButton;
+    QPushButton *pushButton_2;
+    QPushButton *pushButton_3;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -42,6 +46,15 @@ public:
         pushButton = new QPushButton(centralWidget);
         pushButton->setObjectName(QStringLiteral("pushButton"));
         pushButton->setGeometry(QRect(130, 50, 113, 32));
+        radioButton = new QRadioButton(centralWidget);
+        radioButton->setObjectName(QStringLiteral("radioButton"));
+        radioButton->setGeometry(QRect(140, 100, 100, 20));
+        pushButton_2 = new QPushButton(centralWidget);
+        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
+        pushButton_2->setGeometry(QRect(10, 50, 113, 32));
+        pushButton_3 = new QPushButton(centralWidget);
+        pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
+        pushButton_3->setGeometry(QRect(120, 160, 113, 32));
         ntiss->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(ntiss);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -63,6 +76,9 @@ public:
     {
         ntiss->setWindowTitle(QApplication::translate("ntiss", "ntiss", Q_NULLPTR));
         pushButton->setText(QApplication::translate("ntiss", "PushButton", Q_NULLPTR));
+        radioButton->setText(QApplication::translate("ntiss", "RadioButton", Q_NULLPTR));
+        pushButton_2->setText(QApplication::translate("ntiss", "uu", Q_NULLPTR));
+        pushButton_3->setText(QApplication::translate("ntiss", "PushButton", Q_NULLPTR));
     } // retranslateUi
 
 };
