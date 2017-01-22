@@ -9,5 +9,6 @@ int main(int argc, char *argv[])
     ntiss w;
     w.show();
     cout << "good night" << endl;
+    
     return a.exec();
 }
