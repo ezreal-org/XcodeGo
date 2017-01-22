@@ -1,0 +1,467 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		7E4B450D35D6BCD028EEE08F /* Qt Preprocess */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 6CC3B5D2136C7CD6A5CF5A59 /* Build configuration list for PBXNativeTarget "qtgo" */;
+			buildPhases = (
+				5E618435888B9D49F8540165 /* Qt Qmake */,
+				7EF0942E79C014DCEC8976BC /* Qt Preprocessors */,
+			);
+			dependencies = (
+			);
+			name = "Qt Preprocess";
+			productName = "Qt Preprocess";
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		0BFDE830266A54BF1A26DDE2 /* main.cpp in Compile Sources */ = {isa = PBXBuildFile; fileRef = 50B216264FB72945ADB55218 /* main.cpp */; settings = {ATTRIBUTES = (); }; };
+		3F3B3909425D970AE2EAF1E9 /* QtGui.framework in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = 270E907B1995675525E5ADD6 /* QtGui.framework */; };
+		51E9F59F00E385420F1A7F36 /* QtCore.framework in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = E99550860A67403DCBFAD48B /* QtCore.framework */; };
+		79B082D832CDAEBCA63AA955 /* QtWidgets.framework in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = 51B4277806732F5C61F5D7D3 /* QtWidgets.framework */; };
+		8771A8C96E9C391044035D99 /* OpenGL.framework in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = D4B32C2222F82AC56BADEB21 /* OpenGL.framework */; };
+		8D267F2E4776F0ECA2F49DC8 /* IOKit.framework in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = A1A67BEAA744704B29168D39 /* IOKit.framework */; };
+		A99B2AA0F9CBBDD12BA126A4 /* DiskArbitration.framework in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = 2B774D8E4178765CE52EAAF5 /* DiskArbitration.framework */; };
+		AD8A7E270909A6E5EBA1BA73 /* moc_ntiss.cpp in Compile Sources */ = {isa = PBXBuildFile; fileRef = 408A42B51E2B1BCCCD06B6F7 /* moc_ntiss.cpp */; settings = {ATTRIBUTES = (); }; };
+		E45E51A644D5FC9F942ECE55 /* AGL.framework in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = 8D9815BDB5BD9F90D2BC05C5 /* AGL.framework */; };
+		FD3BD2A53C80A7931BA9AA1D /* ntiss.cpp in Compile Sources */ = {isa = PBXBuildFile; fileRef = B9342D63E8B0E1DC4A44D4D4 /* ntiss.cpp */; settings = {ATTRIBUTES = (); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		28A7BB621E354B1000A64962 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6DB9C3763D02B1415CD9D565 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7E4B450D35D6BCD028EEE08F;
+			remoteInfo = "Qt Preprocess";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		270E907B1995675525E5ADD6 /* QtGui.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QtGui.framework; path = /Users/jayce/Public/Qt5.7.1/5.7/clang_64/lib/QtGui.framework; sourceTree = "<absolute>"; };
+		2812160D1E35500E00485918 /* qtgo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = qtgo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B774D8E4178765CE52EAAF5 /* DiskArbitration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DiskArbitration.framework; path = /System/Library/Frameworks/DiskArbitration.framework; sourceTree = "<absolute>"; };
+		408A42B51E2B1BCCCD06B6F7 /* moc_ntiss.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = moc_ntiss.cpp; path = /Users/jayce/Documents/workspace/cpp/qtgo/moc_ntiss.cpp; sourceTree = "<absolute>"; };
+		50B216264FB72945ADB55218 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = /Users/jayce/Documents/workspace/cpp/qtgo/main.cpp; sourceTree = "<absolute>"; };
+		51B4277806732F5C61F5D7D3 /* QtWidgets.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QtWidgets.framework; path = /Users/jayce/Public/Qt5.7.1/5.7/clang_64/lib/QtWidgets.framework; sourceTree = "<absolute>"; };
+		6D03E7320B7E386EC66AB749 /* ntiss.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ntiss.h; path = /Users/jayce/Documents/workspace/cpp/qtgo/ntiss.h; sourceTree = "<absolute>"; };
+		711E5B6E790E0CE621652AA2 /* ntiss.ui */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = ntiss.ui; path = /Users/jayce/Documents/workspace/cpp/qtgo/ntiss.ui; sourceTree = "<absolute>"; };
+		8D9815BDB5BD9F90D2BC05C5 /* AGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AGL.framework; path = /System/Library/Frameworks/AGL.framework; sourceTree = "<absolute>"; };
+		A1A67BEAA744704B29168D39 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = /System/Library/Frameworks/IOKit.framework; sourceTree = "<absolute>"; };
+		B9342D63E8B0E1DC4A44D4D4 /* ntiss.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ntiss.cpp; path = /Users/jayce/Documents/workspace/cpp/qtgo/ntiss.cpp; sourceTree = "<absolute>"; };
+		C2D1408DCBE73AB455002F9E /* qtgo.pro */ = {isa = PBXFileReference; lastKnownFileType = text; name = qtgo.pro; path = /Users/jayce/Documents/workspace/cpp/qtgo/qtgo.pro; sourceTree = "<absolute>"; };
+		D4B32C2222F82AC56BADEB21 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
+		E99550860A67403DCBFAD48B /* QtCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QtCore.framework; path = /Users/jayce/Public/Qt5.7.1/5.7/clang_64/lib/QtCore.framework; sourceTree = "<absolute>"; };
+		E9BF57B32B78175A6A9DFFEE /* ui_ntiss.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ui_ntiss.h; path = /Users/jayce/Documents/workspace/cpp/qtgo/ui_ntiss.h; sourceTree = "<absolute>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D1C883685E82D5676953459A /* Link Binary With Libraries */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				79B082D832CDAEBCA63AA955 /* QtWidgets.framework in Link Binary With Libraries */,
+				3F3B3909425D970AE2EAF1E9 /* QtGui.framework in Link Binary With Libraries */,
+				51E9F59F00E385420F1A7F36 /* QtCore.framework in Link Binary With Libraries */,
+				A99B2AA0F9CBBDD12BA126A4 /* DiskArbitration.framework in Link Binary With Libraries */,
+				8D267F2E4776F0ECA2F49DC8 /* IOKit.framework in Link Binary With Libraries */,
+				8771A8C96E9C391044035D99 /* OpenGL.framework in Link Binary With Libraries */,
+				E45E51A644D5FC9F942ECE55 /* AGL.framework in Link Binary With Libraries */,
+			);
+			name = "Link Binary With Libraries";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		25B08E2869634E9BCBA333A2 /* qt_generate */ = {
+			isa = PBXGroup;
+			children = (
+				711E5B6E790E0CE621652AA2 /* ntiss.ui */,
+				C2D1408DCBE73AB455002F9E /* qtgo.pro */,
+				408A42B51E2B1BCCCD06B6F7 /* moc_ntiss.cpp */,
+				E9BF57B32B78175A6A9DFFEE /* ui_ntiss.h */,
+			);
+			name = qt_generate;
+			sourceTree = "<group>";
+		};
+		28A7BB631E354B5F00A64962 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				50B216264FB72945ADB55218 /* main.cpp */,
+				B9342D63E8B0E1DC4A44D4D4 /* ntiss.cpp */,
+				6D03E7320B7E386EC66AB749 /* ntiss.h */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
+		28A7BB641E354B8E00A64962 /* qt_framework */ = {
+			isa = PBXGroup;
+			children = (
+				51B4277806732F5C61F5D7D3 /* QtWidgets.framework */,
+				270E907B1995675525E5ADD6 /* QtGui.framework */,
+				E99550860A67403DCBFAD48B /* QtCore.framework */,
+				2B774D8E4178765CE52EAAF5 /* DiskArbitration.framework */,
+				A1A67BEAA744704B29168D39 /* IOKit.framework */,
+				D4B32C2222F82AC56BADEB21 /* OpenGL.framework */,
+				8D9815BDB5BD9F90D2BC05C5 /* AGL.framework */,
+			);
+			name = qt_framework;
+			sourceTree = "<group>";
+		};
+		E8C543AB96796ECAA2E65C57 /* qtgo */ = {
+			isa = PBXGroup;
+			children = (
+				28A7BB631E354B5F00A64962 /* src */,
+				25B08E2869634E9BCBA333A2 /* qt_generate */,
+				28A7BB641E354B8E00A64962 /* qt_framework */,
+				2812160D1E35500E00485918 /* qtgo.app */,
+			);
+			name = qtgo;
+			sourceTree = "<group>";
+			usesTabs = 0;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4E1A29DB82F303869E681586 /* qtgo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6CC3B5D2136C7CD6A5CF5A59 /* Build configuration list for PBXNativeTarget "qtgo" */;
+			buildPhases = (
+				F7E50F631C51CD5B5DC0BC43 /* Compile Sources */,
+				D1C883685E82D5676953459A /* Link Binary With Libraries */,
+				30414803F31797EB689AE508 /* Copy Bundle Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5B9E37F919DF34454DAA4D9E /* PBXTargetDependency */,
+			);
+			name = qtgo;
+			productName = qtgo;
+			productReference = 2812160D1E35500E00485918 /* qtgo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6DB9C3763D02B1415CD9D565 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+			};
+			buildConfigurationList = DAC4C1AA5EDEA1C85E9CA5E6 /* Build configuration list for PBXProject "qtgo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				en,
+			);
+			mainGroup = E8C543AB96796ECAA2E65C57 /* qtgo */;
+			productRefGroup = E8C543AB96796ECAA2E65C57 /* qtgo */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4E1A29DB82F303869E681586 /* qtgo */,
+				7E4B450D35D6BCD028EEE08F /* Qt Preprocess */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		30414803F31797EB689AE508 /* Copy Bundle Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "Copy Bundle Resources";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5E618435888B9D49F8540165 /* Qt Qmake */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "Qt Qmake";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/jayce/Documents/workspace/cpp/qtgo/ -f qtgo.xcodeproj/qt_makeqmake.mak";
+			showEnvVarsInLog = 0;
+		};
+		7EF0942E79C014DCEC8976BC /* Qt Preprocessors */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "Qt Preprocessors";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/jayce/Documents/workspace/cpp/qtgo/ -f qtgo.xcodeproj/qt_preprocess.mak";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F7E50F631C51CD5B5DC0BC43 /* Compile Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0BFDE830266A54BF1A26DDE2 /* main.cpp in Compile Sources */,
+				FD3BD2A53C80A7931BA9AA1D /* ntiss.cpp in Compile Sources */,
+				AD8A7E270909A6E5EBA1BA73 /* moc_ntiss.cpp in Compile Sources */,
+			);
+			name = "Compile Sources";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5B9E37F919DF34454DAA4D9E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7E4B450D35D6BCD028EEE08F /* Qt Preprocess */;
+			targetProxy = 28A7BB621E354B1000A64962 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		339EE1B2CC4FC24589A0EA95 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CC = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1.0;
+				DYLIB_CURRENT_VERSION = 1.0.0;
+				ENABLE_BITCODE = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					/Users/jayce/Public/Qt5.7.1/5.7/clang_64/lib,
+					/Users/jayce/Public/Qt5.7.1/5.7/clang_64/lib,
+				);
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					.,
+					../../../../Public/Qt5.7.1/5.7/clang_64/lib/QtWidgets.framework/Headers,
+					../../../../Public/Qt5.7.1/5.7/clang_64/lib/QtGui.framework/Headers,
+					../../../../Public/Qt5.7.1/5.7/clang_64/lib/QtCore.framework/Headers,
+					.,
+					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/OpenGL.framework/Headers,
+					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AGL.framework/Headers,
+					.,
+					"../../../../Public/Qt5.7.1/5.7/clang_64/mkspecs/macx-clang",
+				);
+				INFOPLIST_FILE = Info.plist;
+				LDPLUSPLUS = "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++";
+				LIBRARY_SEARCH_PATHS = (
+					/Users/jayce/Public/Qt5.7.1/5.7/clang_64/lib,
+					/System/Library/Frameworks/,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				OTHER_CFLAGS = (
+					"-pipe",
+					"-O2",
+					"-Wall",
+					"-W",
+					"-fPIC",
+					"-DQT_DEPRECATED_WARNINGS",
+					"-DQT_NO_DEBUG",
+					"-DQT_WIDGETS_LIB",
+					"-DQT_GUI_LIB",
+					"-DQT_CORE_LIB",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"-pipe",
+					"-stdlib=libc++",
+					"-O2",
+					"-std=gnu++11",
+					"-Wall",
+					"-W",
+					"-fPIC",
+					"-DQT_DEPRECATED_WARNINGS",
+					"-DQT_NO_DEBUG",
+					"-DQT_WIDGETS_LIB",
+					"-DQT_GUI_LIB",
+					"-DQT_CORE_LIB",
+				);
+				OTHER_LDFLAGS = (
+					"-headerpad_max_install_names",
+					"-stdlib=libc++",
+					"-Wl,-rpath,/Users/jayce/Public/Qt5.7.1/5.7/clang_64/lib",
+					"-F/Users/jayce/Public/Qt5.7.1/5.7/clang_64/lib",
+				);
+				PRODUCT_NAME = qtgo;
+				QT_LIBRARY_SUFFIX = "";
+				SDKROOT = macosx;
+				SYMROOT = /Users/jayce/Documents/workspace/cpp/qtgo/;
+			};
+			name = Release;
+		};
+		3AA6C32AC930069E80220CF1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CC = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DYLIB_COMPATIBILITY_VERSION = 1.0;
+				DYLIB_CURRENT_VERSION = 1.0.0;
+				ENABLE_BITCODE = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					/Users/jayce/Public/Qt5.7.1/5.7/clang_64/lib,
+					/Users/jayce/Public/Qt5.7.1/5.7/clang_64/lib,
+				);
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					.,
+					../../../../Public/Qt5.7.1/5.7/clang_64/lib/QtWidgets.framework/Headers,
+					../../../../Public/Qt5.7.1/5.7/clang_64/lib/QtGui.framework/Headers,
+					../../../../Public/Qt5.7.1/5.7/clang_64/lib/QtCore.framework/Headers,
+					.,
+					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/OpenGL.framework/Headers,
+					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AGL.framework/Headers,
+					.,
+					"../../../../Public/Qt5.7.1/5.7/clang_64/mkspecs/macx-clang",
+				);
+				INFOPLIST_FILE = Info.plist;
+				LDPLUSPLUS = "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++";
+				LIBRARY_SEARCH_PATHS = (
+					/Users/jayce/Public/Qt5.7.1/5.7/clang_64/lib,
+					/System/Library/Frameworks/,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = (
+					"-pipe",
+					"-O2",
+					"-Wall",
+					"-W",
+					"-fPIC",
+					"-DQT_DEPRECATED_WARNINGS",
+					"-DQT_NO_DEBUG",
+					"-DQT_WIDGETS_LIB",
+					"-DQT_GUI_LIB",
+					"-DQT_CORE_LIB",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"-pipe",
+					"-stdlib=libc++",
+					"-O2",
+					"-std=gnu++11",
+					"-Wall",
+					"-W",
+					"-fPIC",
+					"-DQT_DEPRECATED_WARNINGS",
+					"-DQT_NO_DEBUG",
+					"-DQT_WIDGETS_LIB",
+					"-DQT_GUI_LIB",
+					"-DQT_CORE_LIB",
+				);
+				OTHER_LDFLAGS = (
+					"-headerpad_max_install_names",
+					"-stdlib=libc++",
+					"-Wl,-rpath,/Users/jayce/Public/Qt5.7.1/5.7/clang_64/lib",
+					"-F/Users/jayce/Public/Qt5.7.1/5.7/clang_64/lib",
+				);
+				PRODUCT_NAME = qtgo;
+				QT_LIBRARY_SUFFIX = _debug;
+				SDKROOT = macosx;
+				SYMROOT = /Users/jayce/Documents/workspace/cpp/qtgo/;
+			};
+			name = Debug;
+		};
+		6666AA5E688052234F6758D8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				ENABLE_BITCODE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "ntiss.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = qtgo;
+				QT_LIBRARY_SUFFIX = "";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		77418F46922677BB04ED38DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				ENABLE_BITCODE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PRODUCT_BUNDLE_IDENTIFIER = "ntiss.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = qtgo;
+				QT_LIBRARY_SUFFIX = _debug;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6CC3B5D2136C7CD6A5CF5A59 /* Build configuration list for PBXNativeTarget "qtgo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				77418F46922677BB04ED38DD /* Debug */,
+				6666AA5E688052234F6758D8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DAC4C1AA5EDEA1C85E9CA5E6 /* Build configuration list for PBXProject "qtgo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3AA6C32AC930069E80220CF1 /* Debug */,
+				339EE1B2CC4FC24589A0EA95 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6DB9C3763D02B1415CD9D565 /* Project object */;
+}
