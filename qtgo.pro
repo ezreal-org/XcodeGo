@@ -24,8 +24,10 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 
 SOURCES += main.cpp\
-        ntiss.cpp
+        ntiss.cpp \
+    widget_painter.cpp
 
-HEADERS  += ntiss.h
+HEADERS  += ntiss.h \
+    widget_painter.h
 
 FORMS    += ntiss.ui

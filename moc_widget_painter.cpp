@@ -1,16 +1,16 @@
 /****************************************************************************
-** Meta object code from reading C++ file 'ntiss.h'
+** Meta object code from reading C++ file 'widget_painter.h'
 **
 ** Created by: The Qt Meta Object Compiler version 67 (Qt 5.7.1)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
-#include "ntiss.h"
+#include "widget_painter.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
-#error "The header file 'ntiss.h' doesn't include <QObject>."
+#error "The header file 'widget_painter.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
 #error "This file was generated using the moc from 5.7.1. It"
 #error "cannot be used with the include files from this version of Qt."
@@ -18,27 +18,28 @@
 #endif
 
 QT_BEGIN_MOC_NAMESPACE
-struct qt_meta_stringdata_ntiss_t {
-    QByteArrayData data[3];
-    char stringdata0[29];
+struct qt_meta_stringdata_Widget_Painter_t {
+    QByteArrayData data[4];
+    char stringdata0[40];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
-    qptrdiff(offsetof(qt_meta_stringdata_ntiss_t, stringdata0) + ofs \
+    qptrdiff(offsetof(qt_meta_stringdata_Widget_Painter_t, stringdata0) + ofs \
         - idx * sizeof(QByteArrayData)) \
     )
-static const qt_meta_stringdata_ntiss_t qt_meta_stringdata_ntiss = {
+static const qt_meta_stringdata_Widget_Painter_t qt_meta_stringdata_Widget_Painter = {
     {
-QT_MOC_LITERAL(0, 0, 5), // "ntiss"
-QT_MOC_LITERAL(1, 6, 21), // "on_pushButton_clicked"
-QT_MOC_LITERAL(2, 28, 0) // ""
+QT_MOC_LITERAL(0, 0, 14), // "Widget_Painter"
+QT_MOC_LITERAL(1, 15, 10), // "paintEvent"
+QT_MOC_LITERAL(2, 26, 0), // ""
+QT_MOC_LITERAL(3, 27, 12) // "QPaintEvent*"
 
     },
-    "ntiss\0on_pushButton_clicked\0"
+    "Widget_Painter\0paintEvent\0\0QPaintEvent*"
 };
 #undef QT_MOC_LITERAL
 
-static const uint qt_meta_data_ntiss[] = {
+static const uint qt_meta_data_Widget_Painter[] = {
 
  // content:
        7,       // revision
@@ -52,49 +53,48 @@ static const uint qt_meta_data_ntiss[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   19,    2, 0x08 /* Private */,
+       1,    1,   19,    2, 0x08 /* Private */,
 
  // slots: parameters
-    QMetaType::Void,
+    QMetaType::Void, 0x80000000 | 3,    2,
 
        0        // eod
 };
 
-void ntiss::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+void Widget_Painter::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     if (_c == QMetaObject::InvokeMetaMethod) {
-        ntiss *_t = static_cast<ntiss *>(_o);
+        Widget_Painter *_t = static_cast<Widget_Painter *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->on_pushButton_clicked(); break;
+        case 0: _t->paintEvent((*reinterpret_cast< QPaintEvent*(*)>(_a[1]))); break;
         default: ;
         }
     }
-    Q_UNUSED(_a);
 }
 
-const QMetaObject ntiss::staticMetaObject = {
-    { &QMainWindow::staticMetaObject, qt_meta_stringdata_ntiss.data,
-      qt_meta_data_ntiss,  qt_static_metacall, Q_NULLPTR, Q_NULLPTR}
+const QMetaObject Widget_Painter::staticMetaObject = {
+    { &QWidget::staticMetaObject, qt_meta_stringdata_Widget_Painter.data,
+      qt_meta_data_Widget_Painter,  qt_static_metacall, Q_NULLPTR, Q_NULLPTR}
 };
 
 
-const QMetaObject *ntiss::metaObject() const
+const QMetaObject *Widget_Painter::metaObject() const
 {
     return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
 }
 
-void *ntiss::qt_metacast(const char *_clname)
+void *Widget_Painter::qt_metacast(const char *_clname)
 {
     if (!_clname) return Q_NULLPTR;
-    if (!strcmp(_clname, qt_meta_stringdata_ntiss.stringdata0))
-        return static_cast<void*>(const_cast< ntiss*>(this));
-    return QMainWindow::qt_metacast(_clname);
+    if (!strcmp(_clname, qt_meta_stringdata_Widget_Painter.stringdata0))
+        return static_cast<void*>(const_cast< Widget_Painter*>(this));
+    return QWidget::qt_metacast(_clname);
 }
 
-int ntiss::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+int Widget_Painter::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
-    _id = QMainWindow::qt_metacall(_c, _id, _a);
+    _id = QWidget::qt_metacall(_c, _id, _a);
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {

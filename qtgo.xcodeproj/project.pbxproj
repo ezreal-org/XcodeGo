@@ -23,6 +23,8 @@
 
 /* Begin PBXBuildFile section */
 		0BFDE830266A54BF1A26DDE2 /* main.cpp in Compile Sources */ = {isa = PBXBuildFile; fileRef = 50B216264FB72945ADB55218 /* main.cpp */; settings = {ATTRIBUTES = (); }; };
+		28EE718D1E36812100558CC0 /* widget_painter.cpp in Compile Sources */ = {isa = PBXBuildFile; fileRef = 28EE718B1E36812100558CC0 /* widget_painter.cpp */; };
+		28EE718F1E36890900558CC0 /* moc_widget_painter.cpp in Compile Sources */ = {isa = PBXBuildFile; fileRef = 28EE718E1E36890900558CC0 /* moc_widget_painter.cpp */; };
 		3F3B3909425D970AE2EAF1E9 /* QtGui.framework in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = 270E907B1995675525E5ADD6 /* QtGui.framework */; };
 		51E9F59F00E385420F1A7F36 /* QtCore.framework in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = E99550860A67403DCBFAD48B /* QtCore.framework */; };
 		79B082D832CDAEBCA63AA955 /* QtWidgets.framework in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = 51B4277806732F5C61F5D7D3 /* QtWidgets.framework */; };
@@ -47,6 +49,9 @@
 /* Begin PBXFileReference section */
 		270E907B1995675525E5ADD6 /* QtGui.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QtGui.framework; path = /Users/jayce/Public/Qt5.7.1/5.7/clang_64/lib/QtGui.framework; sourceTree = "<absolute>"; };
 		2812160D1E35500E00485918 /* qtgo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = qtgo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		28EE718B1E36812100558CC0 /* widget_painter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = widget_painter.cpp; sourceTree = "<group>"; };
+		28EE718C1E36812100558CC0 /* widget_painter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = widget_painter.h; sourceTree = "<group>"; };
+		28EE718E1E36890900558CC0 /* moc_widget_painter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = moc_widget_painter.cpp; sourceTree = "<group>"; };
 		2B774D8E4178765CE52EAAF5 /* DiskArbitration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DiskArbitration.framework; path = /System/Library/Frameworks/DiskArbitration.framework; sourceTree = "<absolute>"; };
 		408A42B51E2B1BCCCD06B6F7 /* moc_ntiss.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = moc_ntiss.cpp; path = /Users/jayce/Documents/workspace/cpp/qtgo/moc_ntiss.cpp; sourceTree = "<absolute>"; };
 		50B216264FB72945ADB55218 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = /Users/jayce/Documents/workspace/cpp/qtgo/main.cpp; sourceTree = "<absolute>"; };
@@ -84,6 +89,7 @@
 		25B08E2869634E9BCBA333A2 /* qt_generate */ = {
 			isa = PBXGroup;
 			children = (
+				28EE718E1E36890900558CC0 /* moc_widget_painter.cpp */,
 				711E5B6E790E0CE621652AA2 /* ntiss.ui */,
 				C2D1408DCBE73AB455002F9E /* qtgo.pro */,
 				408A42B51E2B1BCCCD06B6F7 /* moc_ntiss.cpp */,
@@ -95,6 +101,8 @@
 		28A7BB631E354B5F00A64962 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				28EE718B1E36812100558CC0 /* widget_painter.cpp */,
+				28EE718C1E36812100558CC0 /* widget_painter.h */,
 				50B216264FB72945ADB55218 /* main.cpp */,
 				B9342D63E8B0E1DC4A44D4D4 /* ntiss.cpp */,
 				6D03E7320B7E386EC66AB749 /* ntiss.h */,
@@ -217,8 +225,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0BFDE830266A54BF1A26DDE2 /* main.cpp in Compile Sources */,
+				28EE718D1E36812100558CC0 /* widget_painter.cpp in Compile Sources */,
 				FD3BD2A53C80A7931BA9AA1D /* ntiss.cpp in Compile Sources */,
 				AD8A7E270909A6E5EBA1BA73 /* moc_ntiss.cpp in Compile Sources */,
+				28EE718F1E36890900558CC0 /* moc_widget_painter.cpp in Compile Sources */,
 			);
 			name = "Compile Sources";
 			runOnlyForDeploymentPostprocessing = 0;
