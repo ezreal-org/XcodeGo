@@ -13,9 +13,10 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QFormLayout>
 #include <QtWidgets/QHeaderView>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
-#include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QRadioButton>
 #include <QtWidgets/QStatusBar>
@@ -30,9 +31,14 @@ public:
     QWidget *centralWidget;
     QPushButton *pushButton;
     QRadioButton *radioButton;
-    QPushButton *pushButton_2;
+    QRadioButton *radioButton_2;
+    QLabel *label;
+    QPushButton *pushButton_5;
+    QPushButton *pushButton_6;
+    QWidget *widget;
+    QFormLayout *formLayout;
     QPushButton *pushButton_3;
-    QMenuBar *menuBar;
+    QPushButton *pushButton_4;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
 
@@ -45,21 +51,43 @@ public:
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         pushButton = new QPushButton(centralWidget);
         pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(130, 50, 113, 32));
+        pushButton->setGeometry(QRect(0, 100, 113, 32));
         radioButton = new QRadioButton(centralWidget);
         radioButton->setObjectName(QStringLiteral("radioButton"));
         radioButton->setGeometry(QRect(140, 100, 100, 20));
-        pushButton_2 = new QPushButton(centralWidget);
-        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
-        pushButton_2->setGeometry(QRect(10, 50, 113, 32));
-        pushButton_3 = new QPushButton(centralWidget);
+        radioButton_2 = new QRadioButton(centralWidget);
+        radioButton_2->setObjectName(QStringLiteral("radioButton_2"));
+        radioButton_2->setGeometry(QRect(140, 130, 100, 20));
+        label = new QLabel(centralWidget);
+        label->setObjectName(QStringLiteral("label"));
+        label->setGeometry(QRect(50, 270, 60, 16));
+        pushButton_5 = new QPushButton(centralWidget);
+        pushButton_5->setObjectName(QStringLiteral("pushButton_5"));
+        pushButton_5->setGeometry(QRect(0, 270, 113, 32));
+        pushButton_6 = new QPushButton(centralWidget);
+        pushButton_6->setObjectName(QStringLiteral("pushButton_6"));
+        pushButton_6->setGeometry(QRect(20, 270, 113, 32));
+        pushButton_6->setAutoDefault(true);
+        pushButton_6->setFlat(false);
+        widget = new QWidget(centralWidget);
+        widget->setObjectName(QStringLiteral("widget"));
+        widget->setGeometry(QRect(130, 160, 111, 90));
+        formLayout = new QFormLayout(widget);
+        formLayout->setSpacing(6);
+        formLayout->setContentsMargins(11, 11, 11, 11);
+        formLayout->setObjectName(QStringLiteral("formLayout"));
+        formLayout->setContentsMargins(0, 0, 0, 0);
+        pushButton_3 = new QPushButton(widget);
         pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
-        pushButton_3->setGeometry(QRect(120, 160, 113, 32));
+
+        formLayout->setWidget(1, QFormLayout::LabelRole, pushButton_3);
+
+        pushButton_4 = new QPushButton(widget);
+        pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
+
+        formLayout->setWidget(2, QFormLayout::LabelRole, pushButton_4);
+
         ntiss->setCentralWidget(centralWidget);
-        menuBar = new QMenuBar(ntiss);
-        menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 400, 22));
-        ntiss->setMenuBar(menuBar);
         mainToolBar = new QToolBar(ntiss);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
         ntiss->addToolBar(Qt::TopToolBarArea, mainToolBar);
@@ -77,8 +105,12 @@ public:
         ntiss->setWindowTitle(QApplication::translate("ntiss", "ntiss", Q_NULLPTR));
         pushButton->setText(QApplication::translate("ntiss", "PushButton", Q_NULLPTR));
         radioButton->setText(QApplication::translate("ntiss", "RadioButton", Q_NULLPTR));
-        pushButton_2->setText(QApplication::translate("ntiss", "uu", Q_NULLPTR));
+        radioButton_2->setText(QApplication::translate("ntiss", "RadioButton", Q_NULLPTR));
+        label->setText(QApplication::translate("ntiss", "status", Q_NULLPTR));
+        pushButton_5->setText(QApplication::translate("ntiss", "PushButton", Q_NULLPTR));
+        pushButton_6->setText(QApplication::translate("ntiss", "PushButton", Q_NULLPTR));
         pushButton_3->setText(QApplication::translate("ntiss", "PushButton", Q_NULLPTR));
+        pushButton_4->setText(QApplication::translate("ntiss", "PushButton", Q_NULLPTR));
     } // retranslateUi
 
 };

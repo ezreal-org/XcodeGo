@@ -15,7 +15,7 @@ ntiss::~ntiss()
 
 void ntiss::on_pushButton_clicked()
 {
-    ui->pushButton->setText("hello tiankai");
+    ui->pushButton->setText("clicked");
     QMessageBox::about(NULL, "About", "fuck");
 }
 
