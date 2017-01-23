@@ -18,9 +18,11 @@ public:
 
 private slots:
     void on_pushButton_clicked();
+    void paintEvent(QPaintEvent *event);
 
 private:
     Ui::ntiss *ui;
+    QPixmap *p_pixmap;
 };
 
 #endif // NTISS_H

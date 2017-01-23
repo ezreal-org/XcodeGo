@@ -14,6 +14,7 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QHeaderView>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QPlainTextEdit>
 #include <QtWidgets/QPushButton>
@@ -27,6 +28,7 @@ public:
     QWidget *centralWidget;
     QPushButton *pushButton;
     QPlainTextEdit *plainTextEdit;
+    QLabel *label;
 
     void setupUi(QMainWindow *ntiss)
     {
@@ -37,11 +39,14 @@ public:
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         pushButton = new QPushButton(centralWidget);
         pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(130, 130, 113, 32));
+        pushButton->setGeometry(QRect(250, 240, 113, 32));
         plainTextEdit = new QPlainTextEdit(centralWidget);
         plainTextEdit->setObjectName(QStringLiteral("plainTextEdit"));
-        plainTextEdit->setGeometry(QRect(90, 60, 191, 41));
+        plainTextEdit->setGeometry(QRect(40, 230, 191, 41));
         plainTextEdit->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        label = new QLabel(centralWidget);
+        label->setObjectName(QStringLiteral("label"));
+        label->setGeometry(QRect(40, 20, 60, 16));
         ntiss->setCentralWidget(centralWidget);
 
         retranslateUi(ntiss);
@@ -53,6 +58,7 @@ public:
     {
         ntiss->setWindowTitle(QApplication::translate("ntiss", "ntiss", Q_NULLPTR));
         pushButton->setText(QApplication::translate("ntiss", "Button", Q_NULLPTR));
+        label->setText(QApplication::translate("ntiss", "TextLabel", Q_NULLPTR));
     } // retranslateUi
 
 };
