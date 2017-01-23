@@ -35,10 +35,15 @@ public:
     QLabel *label;
     QPushButton *pushButton_5;
     QPushButton *pushButton_6;
-    QWidget *widget;
+    QWidget *layoutWidget;
     QFormLayout *formLayout;
     QPushButton *pushButton_3;
     QPushButton *pushButton_4;
+    QPushButton *pushButton_2;
+    QWidget *layoutWidget_2;
+    QFormLayout *formLayout_2;
+    QPushButton *pushButton_7;
+    QPushButton *pushButton_8;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
 
@@ -69,23 +74,44 @@ public:
         pushButton_6->setGeometry(QRect(20, 270, 113, 32));
         pushButton_6->setAutoDefault(true);
         pushButton_6->setFlat(false);
-        widget = new QWidget(centralWidget);
-        widget->setObjectName(QStringLiteral("widget"));
-        widget->setGeometry(QRect(130, 160, 111, 90));
-        formLayout = new QFormLayout(widget);
+        layoutWidget = new QWidget(centralWidget);
+        layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
+        layoutWidget->setGeometry(QRect(130, 160, 111, 90));
+        formLayout = new QFormLayout(layoutWidget);
         formLayout->setSpacing(6);
         formLayout->setContentsMargins(11, 11, 11, 11);
         formLayout->setObjectName(QStringLiteral("formLayout"));
         formLayout->setContentsMargins(0, 0, 0, 0);
-        pushButton_3 = new QPushButton(widget);
+        pushButton_3 = new QPushButton(layoutWidget);
         pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
 
         formLayout->setWidget(1, QFormLayout::LabelRole, pushButton_3);
 
-        pushButton_4 = new QPushButton(widget);
+        pushButton_4 = new QPushButton(layoutWidget);
         pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
 
         formLayout->setWidget(2, QFormLayout::LabelRole, pushButton_4);
+
+        pushButton_2 = new QPushButton(centralWidget);
+        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
+        pushButton_2->setGeometry(QRect(260, 100, 113, 32));
+        layoutWidget_2 = new QWidget(centralWidget);
+        layoutWidget_2->setObjectName(QStringLiteral("layoutWidget_2"));
+        layoutWidget_2->setGeometry(QRect(130, 10, 111, 90));
+        formLayout_2 = new QFormLayout(layoutWidget_2);
+        formLayout_2->setSpacing(6);
+        formLayout_2->setContentsMargins(11, 11, 11, 11);
+        formLayout_2->setObjectName(QStringLiteral("formLayout_2"));
+        formLayout_2->setContentsMargins(0, 0, 0, 0);
+        pushButton_7 = new QPushButton(layoutWidget_2);
+        pushButton_7->setObjectName(QStringLiteral("pushButton_7"));
+
+        formLayout_2->setWidget(1, QFormLayout::LabelRole, pushButton_7);
+
+        pushButton_8 = new QPushButton(layoutWidget_2);
+        pushButton_8->setObjectName(QStringLiteral("pushButton_8"));
+
+        formLayout_2->setWidget(2, QFormLayout::LabelRole, pushButton_8);
 
         ntiss->setCentralWidget(centralWidget);
         mainToolBar = new QToolBar(ntiss);
@@ -111,6 +137,9 @@ public:
         pushButton_6->setText(QApplication::translate("ntiss", "PushButton", Q_NULLPTR));
         pushButton_3->setText(QApplication::translate("ntiss", "PushButton", Q_NULLPTR));
         pushButton_4->setText(QApplication::translate("ntiss", "PushButton", Q_NULLPTR));
+        pushButton_2->setText(QApplication::translate("ntiss", "PushButton", Q_NULLPTR));
+        pushButton_7->setText(QApplication::translate("ntiss", "PushButton", Q_NULLPTR));
+        pushButton_8->setText(QApplication::translate("ntiss", "PushButton", Q_NULLPTR));
     } // retranslateUi
 
 };
