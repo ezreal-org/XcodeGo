@@ -1,9 +1,11 @@
 #include "ntiss.h"
 #include "ui_ntiss.h"
+#include <string>
+using namespace std;
 
 ntiss::ntiss(QWidget *parent) :
-    QMainWindow(parent),
-    ui(new Ui::ntiss)
+QMainWindow(parent),
+ui(new Ui::ntiss)
 {
     ui->setupUi(this);
 }
@@ -15,12 +17,8 @@ ntiss::~ntiss()
 
 void ntiss::on_pushButton_clicked()
 {
-    ui->pushButton->setText("clicked");
-    QMessageBox::about(NULL, "About", "fuck");
+    QPlainTextEdit *plainTextEdit = ui->plainTextEdit;
+    QString tbx_str = plainTextEdit->toPlainText();
+    QMessageBox::about(NULL, "About", tbx_str);
 }
 
-void ntiss::on_pushButton_3_clicked()
-{
-    ui->pushButton->setText("hello tiankai");
-    QMessageBox::about(NULL, "About", "!!!");
-}
