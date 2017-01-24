@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QMessageBox>
+#include "graph/edge_cluster_graph.h"
 
 namespace Ui {
 class ntiss;
@@ -18,9 +19,11 @@ public:
 
 private slots:
     void on_pushButton_clicked();
-
+    void on_pushButton_6_clicked();
+    void on_comboBox_currentIndexChanged(int index);
 private:
     Ui::ntiss *ui;
+    EC_Graph *p_graph;
 };
 
 #endif // NTISS_H

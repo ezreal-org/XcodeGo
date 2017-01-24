@@ -25,9 +25,35 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += main.cpp\
         ntiss.cpp \
-    widget_painter.cpp
+    frame_painter.cpp
 
 HEADERS  += ntiss.h \
-    widget_painter.h
+    graph/lpp_algorithm/ec_sae.h \
+    graph/lpp_algorithm/plpca.h \
+    graph/lpp_algorithm/replay_attack.h \
+    graph/lpp_algorithm/sa.h \
+    graph/display.h \
+    graph/draw_util.h \
+    graph/edge_cluster_edge.h \
+    graph/edge_cluster_graph.h \
+    graph/edge_cluster_node.h \
+    graph/graph.h \
+    graph/graph_edge.h \
+    graph/graph_node.h \
+    graph/lbs_user.h \
+    graph/poi.h \
+    graph/random_generator.h \
+    graph/util.h \
+    frame_painter.h
 
 FORMS    += ntiss.ui
+
+DISTFILES += \
+    graph/lpp_algorithm/out1.txt \
+    graph/map_data/graph_config_oldenburgGen.txt \
+    graph/map_data/graph_config_sanfrancisco.txt \
+    graph/map_data/oldenburgGen_edge.txt \
+    graph/map_data/oldenburgGen_node.txt \
+    graph/map_data/sanfrancisco_edge.txt \
+    graph/map_data/sanfrancisco_node.txt \
+    graph/map_data/sanfrancisco_node_bak.txt

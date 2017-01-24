@@ -23,8 +23,19 @@
 
 /* Begin PBXBuildFile section */
 		0BFDE830266A54BF1A26DDE2 /* main.cpp in Compile Sources */ = {isa = PBXBuildFile; fileRef = 50B216264FB72945ADB55218 /* main.cpp */; settings = {ATTRIBUTES = (); }; };
-		28EE718D1E36812100558CC0 /* widget_painter.cpp in Compile Sources */ = {isa = PBXBuildFile; fileRef = 28EE718B1E36812100558CC0 /* widget_painter.cpp */; };
-		28EE718F1E36890900558CC0 /* moc_widget_painter.cpp in Compile Sources */ = {isa = PBXBuildFile; fileRef = 28EE718E1E36890900558CC0 /* moc_widget_painter.cpp */; };
+		28706D0D1E37430F00F0FC2F /* out1.txt in Copy Bundle Resources */ = {isa = PBXBuildFile; fileRef = 28706D091E37430F00F0FC2F /* out1.txt */; };
+		28706D161E37433B00F0FC2F /* graph_config_oldenburgGen.txt in Copy Bundle Resources */ = {isa = PBXBuildFile; fileRef = 28706D0F1E37433B00F0FC2F /* graph_config_oldenburgGen.txt */; };
+		28706D171E37433B00F0FC2F /* graph_config_sanfrancisco.txt in Copy Bundle Resources */ = {isa = PBXBuildFile; fileRef = 28706D101E37433B00F0FC2F /* graph_config_sanfrancisco.txt */; };
+		28706D181E37433B00F0FC2F /* oldenburgGen_edge.txt in Copy Bundle Resources */ = {isa = PBXBuildFile; fileRef = 28706D111E37433B00F0FC2F /* oldenburgGen_edge.txt */; };
+		28706D191E37433B00F0FC2F /* oldenburgGen_node.txt in Copy Bundle Resources */ = {isa = PBXBuildFile; fileRef = 28706D121E37433B00F0FC2F /* oldenburgGen_node.txt */; };
+		28706D1A1E37433B00F0FC2F /* sanfrancisco_edge.txt in Copy Bundle Resources */ = {isa = PBXBuildFile; fileRef = 28706D131E37433B00F0FC2F /* sanfrancisco_edge.txt */; };
+		28706D1B1E37433B00F0FC2F /* sanfrancisco_node_bak.txt in Copy Bundle Resources */ = {isa = PBXBuildFile; fileRef = 28706D141E37433B00F0FC2F /* sanfrancisco_node_bak.txt */; };
+		28706D1C1E37433B00F0FC2F /* sanfrancisco_node.txt in Copy Bundle Resources */ = {isa = PBXBuildFile; fileRef = 28706D151E37433B00F0FC2F /* sanfrancisco_node.txt */; };
+		28706D221E37436200F0FC2F /* experiment_setting.txt in Copy Bundle Resources */ = {isa = PBXBuildFile; fileRef = 28706D1F1E37436200F0FC2F /* experiment_setting.txt */; };
+		28706D231E37436200F0FC2F /* io_redirection.txt in Copy Bundle Resources */ = {isa = PBXBuildFile; fileRef = 28706D201E37436200F0FC2F /* io_redirection.txt */; };
+		28706D241E37436200F0FC2F /* map_info.txt in Copy Bundle Resources */ = {isa = PBXBuildFile; fileRef = 28706D211E37436200F0FC2F /* map_info.txt */; };
+		28B8297F1E37186C004AFAF3 /* frame_painter.cpp in Compile Sources */ = {isa = PBXBuildFile; fileRef = 28B8297D1E37186C004AFAF3 /* frame_painter.cpp */; };
+		28B829811E371885004AFAF3 /* moc_frame_painter.cpp in Compile Sources */ = {isa = PBXBuildFile; fileRef = 28B829801E371885004AFAF3 /* moc_frame_painter.cpp */; };
 		3F3B3909425D970AE2EAF1E9 /* QtGui.framework in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = 270E907B1995675525E5ADD6 /* QtGui.framework */; };
 		51E9F59F00E385420F1A7F36 /* QtCore.framework in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = E99550860A67403DCBFAD48B /* QtCore.framework */; };
 		79B082D832CDAEBCA63AA955 /* QtWidgets.framework in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = 51B4277806732F5C61F5D7D3 /* QtWidgets.framework */; };
@@ -49,9 +60,35 @@
 /* Begin PBXFileReference section */
 		270E907B1995675525E5ADD6 /* QtGui.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QtGui.framework; path = /Users/jayce/Public/Qt5.7.1/5.7/clang_64/lib/QtGui.framework; sourceTree = "<absolute>"; };
 		2812160D1E35500E00485918 /* qtgo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = qtgo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		28EE718B1E36812100558CC0 /* widget_painter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = widget_painter.cpp; sourceTree = "<group>"; };
-		28EE718C1E36812100558CC0 /* widget_painter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = widget_painter.h; sourceTree = "<group>"; };
-		28EE718E1E36890900558CC0 /* moc_widget_painter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = moc_widget_painter.cpp; sourceTree = "<group>"; };
+		28706CFD1E37430000F0FC2F /* draw_util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = draw_util.h; path = graph/draw_util.h; sourceTree = "<group>"; };
+		28706CFE1E37430000F0FC2F /* edge_cluster_edge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = edge_cluster_edge.h; path = graph/edge_cluster_edge.h; sourceTree = "<group>"; };
+		28706CFF1E37430000F0FC2F /* edge_cluster_graph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = edge_cluster_graph.h; path = graph/edge_cluster_graph.h; sourceTree = "<group>"; };
+		28706D001E37430000F0FC2F /* edge_cluster_node.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = edge_cluster_node.h; path = graph/edge_cluster_node.h; sourceTree = "<group>"; };
+		28706D011E37430000F0FC2F /* graph_edge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = graph_edge.h; path = graph/graph_edge.h; sourceTree = "<group>"; };
+		28706D021E37430000F0FC2F /* graph_node.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = graph_node.h; path = graph/graph_node.h; sourceTree = "<group>"; };
+		28706D031E37430000F0FC2F /* graph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = graph.h; path = graph/graph.h; sourceTree = "<group>"; };
+		28706D041E37430000F0FC2F /* lbs_user.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lbs_user.h; path = graph/lbs_user.h; sourceTree = "<group>"; };
+		28706D051E37430000F0FC2F /* poi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = poi.h; path = graph/poi.h; sourceTree = "<group>"; };
+		28706D061E37430000F0FC2F /* random_generator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = random_generator.h; path = graph/random_generator.h; sourceTree = "<group>"; };
+		28706D071E37430000F0FC2F /* util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = util.h; path = graph/util.h; sourceTree = "<group>"; };
+		28706D081E37430F00F0FC2F /* ec_sae.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ec_sae.h; path = graph/lpp_algorithm/ec_sae.h; sourceTree = "<group>"; };
+		28706D091E37430F00F0FC2F /* out1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = out1.txt; path = graph/lpp_algorithm/out1.txt; sourceTree = "<group>"; };
+		28706D0A1E37430F00F0FC2F /* plpca.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = plpca.h; path = graph/lpp_algorithm/plpca.h; sourceTree = "<group>"; };
+		28706D0B1E37430F00F0FC2F /* replay_attack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = replay_attack.h; path = graph/lpp_algorithm/replay_attack.h; sourceTree = "<group>"; };
+		28706D0C1E37430F00F0FC2F /* sa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = sa.h; path = graph/lpp_algorithm/sa.h; sourceTree = "<group>"; };
+		28706D0F1E37433B00F0FC2F /* graph_config_oldenburgGen.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = graph_config_oldenburgGen.txt; path = graph/map_data/graph_config_oldenburgGen.txt; sourceTree = "<group>"; };
+		28706D101E37433B00F0FC2F /* graph_config_sanfrancisco.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = graph_config_sanfrancisco.txt; path = graph/map_data/graph_config_sanfrancisco.txt; sourceTree = "<group>"; };
+		28706D111E37433B00F0FC2F /* oldenburgGen_edge.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = oldenburgGen_edge.txt; path = graph/map_data/oldenburgGen_edge.txt; sourceTree = "<group>"; };
+		28706D121E37433B00F0FC2F /* oldenburgGen_node.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = oldenburgGen_node.txt; path = graph/map_data/oldenburgGen_node.txt; sourceTree = "<group>"; };
+		28706D131E37433B00F0FC2F /* sanfrancisco_edge.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = sanfrancisco_edge.txt; path = graph/map_data/sanfrancisco_edge.txt; sourceTree = "<group>"; };
+		28706D141E37433B00F0FC2F /* sanfrancisco_node_bak.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = sanfrancisco_node_bak.txt; path = graph/map_data/sanfrancisco_node_bak.txt; sourceTree = "<group>"; };
+		28706D151E37433B00F0FC2F /* sanfrancisco_node.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = sanfrancisco_node.txt; path = graph/map_data/sanfrancisco_node.txt; sourceTree = "<group>"; };
+		28706D1F1E37436200F0FC2F /* experiment_setting.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = experiment_setting.txt; sourceTree = "<group>"; };
+		28706D201E37436200F0FC2F /* io_redirection.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = io_redirection.txt; sourceTree = "<group>"; };
+		28706D211E37436200F0FC2F /* map_info.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = map_info.txt; sourceTree = "<group>"; };
+		28B8297D1E37186C004AFAF3 /* frame_painter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = frame_painter.cpp; sourceTree = "<group>"; };
+		28B8297E1E37186C004AFAF3 /* frame_painter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = frame_painter.h; sourceTree = "<group>"; };
+		28B829801E371885004AFAF3 /* moc_frame_painter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = moc_frame_painter.cpp; sourceTree = "<group>"; };
 		2B774D8E4178765CE52EAAF5 /* DiskArbitration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DiskArbitration.framework; path = /System/Library/Frameworks/DiskArbitration.framework; sourceTree = "<absolute>"; };
 		408A42B51E2B1BCCCD06B6F7 /* moc_ntiss.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = moc_ntiss.cpp; path = /Users/jayce/Documents/workspace/cpp/qtgo/moc_ntiss.cpp; sourceTree = "<absolute>"; };
 		50B216264FB72945ADB55218 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = /Users/jayce/Documents/workspace/cpp/qtgo/main.cpp; sourceTree = "<absolute>"; };
@@ -89,7 +126,7 @@
 		25B08E2869634E9BCBA333A2 /* qt_generate */ = {
 			isa = PBXGroup;
 			children = (
-				28EE718E1E36890900558CC0 /* moc_widget_painter.cpp */,
+				28B829801E371885004AFAF3 /* moc_frame_painter.cpp */,
 				711E5B6E790E0CE621652AA2 /* ntiss.ui */,
 				C2D1408DCBE73AB455002F9E /* qtgo.pro */,
 				408A42B51E2B1BCCCD06B6F7 /* moc_ntiss.cpp */,
@@ -98,11 +135,70 @@
 			name = qt_generate;
 			sourceTree = "<group>";
 		};
+		28706D0E1E37431F00F0FC2F /* algorithm */ = {
+			isa = PBXGroup;
+			children = (
+				28706D081E37430F00F0FC2F /* ec_sae.h */,
+				28706D091E37430F00F0FC2F /* out1.txt */,
+				28706D0A1E37430F00F0FC2F /* plpca.h */,
+				28706D0B1E37430F00F0FC2F /* replay_attack.h */,
+				28706D0C1E37430F00F0FC2F /* sa.h */,
+			);
+			name = algorithm;
+			sourceTree = "<group>";
+		};
+		28706D1D1E37434800F0FC2F /* map_data */ = {
+			isa = PBXGroup;
+			children = (
+				28706D0F1E37433B00F0FC2F /* graph_config_oldenburgGen.txt */,
+				28706D101E37433B00F0FC2F /* graph_config_sanfrancisco.txt */,
+				28706D111E37433B00F0FC2F /* oldenburgGen_edge.txt */,
+				28706D121E37433B00F0FC2F /* oldenburgGen_node.txt */,
+				28706D131E37433B00F0FC2F /* sanfrancisco_edge.txt */,
+				28706D141E37433B00F0FC2F /* sanfrancisco_node_bak.txt */,
+				28706D151E37433B00F0FC2F /* sanfrancisco_node.txt */,
+			);
+			name = map_data;
+			sourceTree = "<group>";
+		};
+		28706D1E1E37436200F0FC2F /* memos */ = {
+			isa = PBXGroup;
+			children = (
+				28706D1F1E37436200F0FC2F /* experiment_setting.txt */,
+				28706D201E37436200F0FC2F /* io_redirection.txt */,
+				28706D211E37436200F0FC2F /* map_info.txt */,
+			);
+			name = memos;
+			path = graph/memos;
+			sourceTree = "<group>";
+		};
+		28706D251E37437C00F0FC2F /* graph */ = {
+			isa = PBXGroup;
+			children = (
+				28706D1E1E37436200F0FC2F /* memos */,
+				28706D1D1E37434800F0FC2F /* map_data */,
+				28706D0E1E37431F00F0FC2F /* algorithm */,
+				28706CFD1E37430000F0FC2F /* draw_util.h */,
+				28706CFE1E37430000F0FC2F /* edge_cluster_edge.h */,
+				28706CFF1E37430000F0FC2F /* edge_cluster_graph.h */,
+				28706D001E37430000F0FC2F /* edge_cluster_node.h */,
+				28706D011E37430000F0FC2F /* graph_edge.h */,
+				28706D021E37430000F0FC2F /* graph_node.h */,
+				28706D031E37430000F0FC2F /* graph.h */,
+				28706D041E37430000F0FC2F /* lbs_user.h */,
+				28706D051E37430000F0FC2F /* poi.h */,
+				28706D061E37430000F0FC2F /* random_generator.h */,
+				28706D071E37430000F0FC2F /* util.h */,
+			);
+			name = graph;
+			sourceTree = "<group>";
+		};
 		28A7BB631E354B5F00A64962 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				28EE718B1E36812100558CC0 /* widget_painter.cpp */,
-				28EE718C1E36812100558CC0 /* widget_painter.h */,
+				28706D251E37437C00F0FC2F /* graph */,
+				28B8297D1E37186C004AFAF3 /* frame_painter.cpp */,
+				28B8297E1E37186C004AFAF3 /* frame_painter.h */,
 				50B216264FB72945ADB55218 /* main.cpp */,
 				B9342D63E8B0E1DC4A44D4D4 /* ntiss.cpp */,
 				6D03E7320B7E386EC66AB749 /* ntiss.h */,
@@ -188,6 +284,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28706D0D1E37430F00F0FC2F /* out1.txt in Copy Bundle Resources */,
+				28706D1A1E37433B00F0FC2F /* sanfrancisco_edge.txt in Copy Bundle Resources */,
+				28706D1C1E37433B00F0FC2F /* sanfrancisco_node.txt in Copy Bundle Resources */,
+				28706D231E37436200F0FC2F /* io_redirection.txt in Copy Bundle Resources */,
+				28706D191E37433B00F0FC2F /* oldenburgGen_node.txt in Copy Bundle Resources */,
+				28706D161E37433B00F0FC2F /* graph_config_oldenburgGen.txt in Copy Bundle Resources */,
+				28706D171E37433B00F0FC2F /* graph_config_sanfrancisco.txt in Copy Bundle Resources */,
+				28706D241E37436200F0FC2F /* map_info.txt in Copy Bundle Resources */,
+				28706D1B1E37433B00F0FC2F /* sanfrancisco_node_bak.txt in Copy Bundle Resources */,
+				28706D221E37436200F0FC2F /* experiment_setting.txt in Copy Bundle Resources */,
+				28706D181E37433B00F0FC2F /* oldenburgGen_edge.txt in Copy Bundle Resources */,
 			);
 			name = "Copy Bundle Resources";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -225,10 +332,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0BFDE830266A54BF1A26DDE2 /* main.cpp in Compile Sources */,
-				28EE718D1E36812100558CC0 /* widget_painter.cpp in Compile Sources */,
+				28B829811E371885004AFAF3 /* moc_frame_painter.cpp in Compile Sources */,
 				FD3BD2A53C80A7931BA9AA1D /* ntiss.cpp in Compile Sources */,
+				28B8297F1E37186C004AFAF3 /* frame_painter.cpp in Compile Sources */,
 				AD8A7E270909A6E5EBA1BA73 /* moc_ntiss.cpp in Compile Sources */,
-				28EE718F1E36890900558CC0 /* moc_widget_painter.cpp in Compile Sources */,
 			);
 			name = "Compile Sources";
 			runOnlyForDeploymentPostprocessing = 0;

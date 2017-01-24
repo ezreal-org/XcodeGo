@@ -1,0 +1,1 @@
+freopen("/Users/jayce/Documents/workspace/cpp/C-plus-plus-Practice/test.in", "r", stdin);

@@ -1,0 +1,12 @@
+师兄实验参数
+参数	默认值	范围
+s_require 0.4 [0.2,0.8]
+语义位置个数 600 [300,1200]
+位置类型 school (S:64) Office(O:174) Hospital(H:72) Market(M:100) Entertainment(E:58) Park(P:132)
+Lmax 30 [20,40]
+Cmax 1000 [100,1000]
+
+成功率
+匿名集大小
+匿名时间
+poi数目和成功率,匿名集大小

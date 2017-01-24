@@ -50,14 +50,22 @@ OBJECTS_DIR   = ./
 
 SOURCES       = main.cpp \
 		ntiss.cpp \
-		widget_painter.cpp moc_ntiss.cpp \
-		moc_widget_painter.cpp
+		frame_painter.cpp moc_ntiss.cpp \
+		moc_frame_painter.cpp
 OBJECTS       = main.o \
 		ntiss.o \
-		widget_painter.o \
+		frame_painter.o \
 		moc_ntiss.o \
-		moc_widget_painter.o
-DIST          = ../../../../Public/Qt5.7.1/5.7/clang_64/mkspecs/features/spec_pre.prf \
+		moc_frame_painter.o
+DIST          = graph/lpp_algorithm/out1.txt \
+		graph/map_data/graph_config_oldenburgGen.txt \
+		graph/map_data/graph_config_sanfrancisco.txt \
+		graph/map_data/oldenburgGen_edge.txt \
+		graph/map_data/oldenburgGen_node.txt \
+		graph/map_data/sanfrancisco_edge.txt \
+		graph/map_data/sanfrancisco_node.txt \
+		graph/map_data/sanfrancisco_node_bak.txt \
+		../../../../Public/Qt5.7.1/5.7/clang_64/mkspecs/features/spec_pre.prf \
 		../../../../Public/Qt5.7.1/5.7/clang_64/mkspecs/qdevice.pri \
 		../../../../Public/Qt5.7.1/5.7/clang_64/mkspecs/features/device_config.prf \
 		../../../../Public/Qt5.7.1/5.7/clang_64/mkspecs/common/unix.conf \
@@ -220,9 +228,25 @@ DIST          = ../../../../Public/Qt5.7.1/5.7/clang_64/mkspecs/features/spec_pr
 		../../../../Public/Qt5.7.1/5.7/clang_64/mkspecs/features/yacc.prf \
 		../../../../Public/Qt5.7.1/5.7/clang_64/mkspecs/features/lex.prf \
 		qtgo.pro ntiss.h \
-		widget_painter.h main.cpp \
+		graph/lpp_algorithm/ec_sae.h \
+		graph/lpp_algorithm/plpca.h \
+		graph/lpp_algorithm/replay_attack.h \
+		graph/lpp_algorithm/sa.h \
+		graph/display.h \
+		graph/draw_util.h \
+		graph/edge_cluster_edge.h \
+		graph/edge_cluster_graph.h \
+		graph/edge_cluster_node.h \
+		graph/graph.h \
+		graph/graph_edge.h \
+		graph/graph_node.h \
+		graph/lbs_user.h \
+		graph/poi.h \
+		graph/random_generator.h \
+		graph/util.h \
+		frame_painter.h main.cpp \
 		ntiss.cpp \
-		widget_painter.cpp
+		frame_painter.cpp
 QMAKE_TARGET  = qtgo
 DESTDIR       = 
 TARGET        = qtgo.app/Contents/MacOS/qtgo
@@ -597,8 +621,8 @@ dist: distdir FORCE
 distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
-	$(COPY_FILE) --parents ntiss.h widget_painter.h $(DISTDIR)/
-	$(COPY_FILE) --parents main.cpp ntiss.cpp widget_painter.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ntiss.h graph/lpp_algorithm/ec_sae.h graph/lpp_algorithm/plpca.h graph/lpp_algorithm/replay_attack.h graph/lpp_algorithm/sa.h graph/display.h graph/draw_util.h graph/edge_cluster_edge.h graph/edge_cluster_graph.h graph/edge_cluster_node.h graph/graph.h graph/graph_edge.h graph/graph_node.h graph/lbs_user.h graph/poi.h graph/random_generator.h graph/util.h frame_painter.h $(DISTDIR)/
+	$(COPY_FILE) --parents main.cpp ntiss.cpp frame_painter.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ntiss.ui $(DISTDIR)/
 
 
@@ -625,9 +649,9 @@ benchmark: first
 
 compiler_rcc_make_all:
 compiler_rcc_clean:
-compiler_moc_header_make_all: moc_ntiss.cpp moc_widget_painter.cpp
+compiler_moc_header_make_all: moc_ntiss.cpp moc_frame_painter.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_ntiss.cpp moc_widget_painter.cpp
+	-$(DEL_FILE) moc_ntiss.cpp moc_frame_painter.cpp
 moc_ntiss.cpp: ../../../../Public/Qt5.7.1/5.7/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
 		../../../../Public/Qt5.7.1/5.7/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
 		../../../../Public/Qt5.7.1/5.7/clang_64/lib/QtWidgets.framework/Headers/QMessageBox \
@@ -636,11 +660,11 @@ moc_ntiss.cpp: ../../../../Public/Qt5.7.1/5.7/clang_64/lib/QtWidgets.framework/H
 		../../../../Public/Qt5.7.1/5.7/clang_64/bin/moc
 	/Users/jayce/Public/Qt5.7.1/5.7/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -I/Users/jayce/Public/Qt5.7.1/5.7/clang_64/mkspecs/macx-clang -I/Users/jayce/Documents/workspace/cpp/qtgo -I/Users/jayce/Public/Qt5.7.1/5.7/clang_64/lib/QtWidgets.framework/Headers -I/Users/jayce/Public/Qt5.7.1/5.7/clang_64/lib/QtGui.framework/Headers -I/Users/jayce/Public/Qt5.7.1/5.7/clang_64/lib/QtCore.framework/Headers -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/8.0.0/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/usr/include -F/Users/jayce/Public/Qt5.7.1/5.7/clang_64/lib ntiss.h -o moc_ntiss.cpp
 
-moc_widget_painter.cpp: ../../../../Public/Qt5.7.1/5.7/clang_64/lib/QtWidgets.framework/Headers/QWidget \
-		../../../../Public/Qt5.7.1/5.7/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
-		widget_painter.h \
+moc_frame_painter.cpp: ../../../../Public/Qt5.7.1/5.7/clang_64/lib/QtWidgets.framework/Headers/QFrame \
+		../../../../Public/Qt5.7.1/5.7/clang_64/lib/QtWidgets.framework/Headers/qframe.h \
+		frame_painter.h \
 		../../../../Public/Qt5.7.1/5.7/clang_64/bin/moc
-	/Users/jayce/Public/Qt5.7.1/5.7/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -I/Users/jayce/Public/Qt5.7.1/5.7/clang_64/mkspecs/macx-clang -I/Users/jayce/Documents/workspace/cpp/qtgo -I/Users/jayce/Public/Qt5.7.1/5.7/clang_64/lib/QtWidgets.framework/Headers -I/Users/jayce/Public/Qt5.7.1/5.7/clang_64/lib/QtGui.framework/Headers -I/Users/jayce/Public/Qt5.7.1/5.7/clang_64/lib/QtCore.framework/Headers -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/8.0.0/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/usr/include -F/Users/jayce/Public/Qt5.7.1/5.7/clang_64/lib widget_painter.h -o moc_widget_painter.cpp
+	/Users/jayce/Public/Qt5.7.1/5.7/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -I/Users/jayce/Public/Qt5.7.1/5.7/clang_64/mkspecs/macx-clang -I/Users/jayce/Documents/workspace/cpp/qtgo -I/Users/jayce/Public/Qt5.7.1/5.7/clang_64/lib/QtWidgets.framework/Headers -I/Users/jayce/Public/Qt5.7.1/5.7/clang_64/lib/QtGui.framework/Headers -I/Users/jayce/Public/Qt5.7.1/5.7/clang_64/lib/QtCore.framework/Headers -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/8.0.0/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/usr/include -F/Users/jayce/Public/Qt5.7.1/5.7/clang_64/lib frame_painter.h -o moc_frame_painter.cpp
 
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
@@ -649,9 +673,9 @@ compiler_uic_clean:
 	-$(DEL_FILE) ui_ntiss.h
 ui_ntiss.h: ntiss.ui \
 		../../../../Public/Qt5.7.1/5.7/clang_64/bin/uic \
-		widget_painter.h \
-		../../../../Public/Qt5.7.1/5.7/clang_64/lib/QtWidgets.framework/Headers/QWidget \
-		../../../../Public/Qt5.7.1/5.7/clang_64/lib/QtWidgets.framework/Headers/qwidget.h
+		frame_painter.h \
+		../../../../Public/Qt5.7.1/5.7/clang_64/lib/QtWidgets.framework/Headers/QFrame \
+		../../../../Public/Qt5.7.1/5.7/clang_64/lib/QtWidgets.framework/Headers/qframe.h
 	/Users/jayce/Public/Qt5.7.1/5.7/clang_64/bin/uic ntiss.ui -o ui_ntiss.h
 
 compiler_rez_source_make_all:
@@ -687,16 +711,18 @@ ntiss.o: ntiss.cpp ntiss.h \
 		../../../../Public/Qt5.7.1/5.7/clang_64/lib/QtGui.framework/Headers/qpixmap.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ntiss.o ntiss.cpp
 
-widget_painter.o: widget_painter.cpp widget_painter.h \
-		../../../../Public/Qt5.7.1/5.7/clang_64/lib/QtWidgets.framework/Headers/QWidget \
-		../../../../Public/Qt5.7.1/5.7/clang_64/lib/QtWidgets.framework/Headers/qwidget.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o widget_painter.o widget_painter.cpp
+frame_painter.o: frame_painter.cpp frame_painter.h \
+		../../../../Public/Qt5.7.1/5.7/clang_64/lib/QtWidgets.framework/Headers/QFrame \
+		../../../../Public/Qt5.7.1/5.7/clang_64/lib/QtWidgets.framework/Headers/qframe.h \
+		../../../../Public/Qt5.7.1/5.7/clang_64/lib/QtGui.framework/Headers/Qpainter \
+		../../../../Public/Qt5.7.1/5.7/clang_64/lib/QtGui.framework/Headers/qpainter.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o frame_painter.o frame_painter.cpp
 
 moc_ntiss.o: moc_ntiss.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_ntiss.o moc_ntiss.cpp
 
-moc_widget_painter.o: moc_widget_painter.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_widget_painter.o moc_widget_painter.cpp
+moc_frame_painter.o: moc_frame_painter.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_frame_painter.o moc_frame_painter.cpp
 
 ####### Install
 
