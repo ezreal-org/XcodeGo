@@ -2,17 +2,17 @@
 #define LPPA_EC_SAE_H
 
 /*
-SAËã·¨ÒşË½Ä£ĞÍÎª k,¦È°²È«, ²ÉÓÃÌ©É­¶à±ßĞÎ½øĞĞĞËÈ¤µã»®·Ö
-Õû¸öÁ÷³Ì±©Â¶µÄÊÇAsuit,ÄäÃûËã·¨ÔÚ¿Í»§¶ËÖ´ĞĞ
-ÔÚÓÃ»§À©´óÄäÃûÇøÓòµÄ¹ı³ÌÖĞ,Ê×ÏÈËæ»úÑ¡Ôñ·ÇÃô¸ĞÎ»ÖÃ-ÓïÒâÈ±Ê§Öµ
-ÔÙÑ¡ÔñµÀÂ·½»²æµã£¬×îºóÑ¡ÔñÁ÷ĞĞ¶È×îµÍµÄÃô¸ĞÓïÒå
+SAç®—æ³•éšç§æ¨¡å‹ä¸º k,Î¸å®‰å…¨, é‡‡ç”¨æ³°æ£®å¤šè¾¹å½¢è¿›è¡Œå…´è¶£ç‚¹åˆ’åˆ†
+æ•´ä¸ªæµç¨‹æš´éœ²çš„æ˜¯Asuit,åŒ¿åç®—æ³•åœ¨å®¢æˆ·ç«¯æ‰§è¡Œ
+åœ¨ç”¨æˆ·æ‰©å¤§åŒ¿ååŒºåŸŸçš„è¿‡ç¨‹ä¸­,é¦–å…ˆéšæœºé€‰æ‹©éæ•æ„Ÿä½ç½®-è¯­æ„ç¼ºå¤±å€¼
+å†é€‰æ‹©é“è·¯äº¤å‰ç‚¹ï¼Œæœ€åé€‰æ‹©æµè¡Œåº¦æœ€ä½çš„æ•æ„Ÿè¯­ä¹‰
 
-Ëã·¨±¾ÖÊÎª£¬Ã¿´Î¼ÓÈëÒ»¸öÁÙ½üĞËÈ¤µã£¬Ö±µ½Âú×ãÒşË½Ä£ĞÍ
-²»ÄÜ±£Ö¤l¶àÑùĞÔ
-ÎªÁËÊÊÓ¦ĞÂµÄÒşË½Ä¿±ê¡¢·½±ã±È½Ï²éÑ¯Ğ§ÂÊ£º
-²ÉÓÃµÚÈı·½½øĞĞÄäÃû£¬²»Ó°ÏìËã·¨±¾ÖÊ
-Ã¿´ÎÄäÃûÀ©Õ¹Ê±£¬¼ÓÈëÒ»ÌõÁÙ½ü±ß¶ø²»ÊÇÒ»¸öÎ»ÖÃ
-s_type_poi_pop/poi_pop_all >s_require µÄ¶¨ÒåÎªÃô¸ĞÓïÒå
+ç®—æ³•æœ¬è´¨ä¸ºï¼Œæ¯æ¬¡åŠ å…¥ä¸€ä¸ªä¸´è¿‘å…´è¶£ç‚¹ï¼Œç›´åˆ°æ»¡è¶³éšç§æ¨¡å‹
+ä¸èƒ½ä¿è¯lå¤šæ ·æ€§
+ä¸ºäº†é€‚åº”æ–°çš„éšç§ç›®æ ‡ã€æ–¹ä¾¿æ¯”è¾ƒæŸ¥è¯¢æ•ˆç‡ï¼š
+é‡‡ç”¨ç¬¬ä¸‰æ–¹è¿›è¡ŒåŒ¿åï¼Œä¸å½±å“ç®—æ³•æœ¬è´¨
+æ¯æ¬¡åŒ¿åæ‰©å±•æ—¶ï¼ŒåŠ å…¥ä¸€æ¡ä¸´è¿‘è¾¹è€Œä¸æ˜¯ä¸€ä¸ªä½ç½®
+s_type_poi_pop/poi_pop_all >s_require çš„å®šä¹‰ä¸ºæ•æ„Ÿè¯­ä¹‰
 */
 
 #include "../edge_cluster_graph.h"
@@ -34,7 +34,7 @@ public:
 		cnt_of_failure = 0;
 		cnt_of_success = 0;
 		l_max = 30;
-		//´òÓ¡µ±Ç°µØÍ¼×´Ì¬
+		//æ‰“å°å½“å‰åœ°å›¾çŠ¶æ€
 		srand((unsigned)time(NULL));
 	}
 	~Lppa_ecsa_e()
@@ -42,7 +42,7 @@ public:
 		delete[]is_node_selecteds;
 		delete[]is_node_candidate;
 	}
-	//±£»¤Ëã·¨
+	//ä¿æŠ¤ç®—æ³•
 	void lpp()
 	{
 		const vector<EC_Node*> &nodes = p_graph->get_nodes();
@@ -66,9 +66,9 @@ public:
 		cout << "total time consume:" << time_cost << endl;
 		cout << "success:" << cnt_of_success << endl;
 		cout << "failure:" << cnt_of_failure << endl;
-		//Í³¼Æ
-		//ÕâÒ»¿é½«²»¼ÆÈëÄäÃûÊ±¼ä£¬Ö»ÊÇÓÃÓÚ·ÖÎöËã·¨ĞÔÄÜ
-		//¿ª·Å½Úµã´¦ÓÚÔËĞĞÊ±Î´¾ö×´Ì¬,Ö»×÷ÎªÆÀ¼ÛÖ¸±ê
+		//ç»Ÿè®¡
+		//è¿™ä¸€å—å°†ä¸è®¡å…¥åŒ¿åæ—¶é—´ï¼Œåªæ˜¯ç”¨äºåˆ†æç®—æ³•æ€§èƒ½
+		//å¼€æ”¾èŠ‚ç‚¹å¤„äºè¿è¡Œæ—¶æœªå†³çŠ¶æ€,åªä½œä¸ºè¯„ä»·æŒ‡æ ‡
 		cout << "calculate open vetex begin:" << endl;
 		set<Node*> node_set;
 		set<Node*>::iterator it_node_set;
@@ -100,8 +100,8 @@ public:
 
 			for (it_node_set = node_set.begin(); it_node_set != node_set.end(); it_node_set++) {
 				adj_edges = (*it_node_set)->getAdjEdges();
-				for (int j = 0; j < adj_edges.size(); j++) { //ÅĞ¶ÏËùÓĞÁÙ½ü±ßÊÇ·ñ¶¼ÔÚÄäÃû¼¯
-					if (!vector_find(cloak_set, adj_edges[j])) { //Ã»ÕÒµ½,»¹¼ÆËãÓĞ¶àÉÙÔÚ£¿
+				for (int j = 0; j < adj_edges.size(); j++) { //åˆ¤æ–­æ‰€æœ‰ä¸´è¿‘è¾¹æ˜¯å¦éƒ½åœ¨åŒ¿åé›†
+					if (!vector_find(cloak_set, adj_edges[j])) { //æ²¡æ‰¾åˆ°,è¿˜è®¡ç®—æœ‰å¤šå°‘åœ¨ï¼Ÿ
 						cnt_of_openvetex++;
 						break;
 					}
@@ -117,7 +117,7 @@ public:
 		cout << "average cloak size: " << (double)all_edge_size / user_cnt << endl;
 
 	}
-	//ÎªÃ¿¸öÓÃ»§
+	//ä¸ºæ¯ä¸ªç”¨æˆ·
 	vector<EC_Node*> ec_sae(LBS_User *&pu, EC_Node *pn)
 	{
 		k = 0;
@@ -126,7 +126,7 @@ public:
 		accumulate_svalue = 0.0;
 		memset(is_node_selecteds, false, p_graph->get_nodes().size());
 		memset(is_node_candidate, false, p_graph->get_nodes().size());
-		double w2 = 0.1; // w2µ÷½Ú½á¹¹µÄÖØÒª³Ì¶È£¬ÄäÃû·şÎñÆ÷ÉèÖÃ£¬»áÓĞ²ÎÊıÌÖÂÛ
+		double w2 = 0.1; // w2è°ƒèŠ‚ç»“æ„çš„é‡è¦ç¨‹åº¦ï¼ŒåŒ¿åæœåŠ¡å™¨è®¾ç½®ï¼Œä¼šæœ‰å‚æ•°è®¨è®º
 		is_success = false;
 		double accumulate_svalue = 0, accumulate_pop = 0;
 		vector<EC_Node*> cloak_set;
@@ -139,7 +139,7 @@ public:
 			if (candidate_map.size() < 1) break;
 
 			/*
-			¼ÓÈë¿É¿ØËæ»úĞÔ
+			åŠ å…¥å¯æ§éšæœºæ€§
 			*/
 			double random_num = (double)rand()/RAND_MAX;
 			if (random_num < 0) {
@@ -157,14 +157,14 @@ public:
 			}
 			double minimal_miss_s = numeric_limits<double>::max(), maximal_miss_s = numeric_limits<double>::min(), maximal_score = 0;
 			//--
-			for (it_candidate = candidate_map.begin(); it_candidate != candidate_map.end(); it_candidate++) { //ÒÑ¾­¼ÆËãÁËµÄ¾Í²»ÓÃ¼ÆËã
+			for (it_candidate = candidate_map.begin(); it_candidate != candidate_map.end(); it_candidate++) { //å·²ç»è®¡ç®—äº†çš„å°±ä¸ç”¨è®¡ç®—
 				double candidate_svalue = it_candidate->second.first;
 				double candidate_pop = it_candidate->second.second;
 				double missed_value = candidate_svalue / pu->get_s() - candidate_pop;
 				if (missed_value < minimal_miss_s) minimal_miss_s = missed_value;
 				if (missed_value > maximal_miss_s) maximal_miss_s = missed_value;
 			}
-			for (it_candidate = candidate_map.begin(); it_candidate != candidate_map.end(); it_candidate++) { //ÒÑ¾­¼ÆËãÁËµÄ¾Í²»ÓÃ¼ÆËã
+			for (it_candidate = candidate_map.begin(); it_candidate != candidate_map.end(); it_candidate++) { //å·²ç»è®¡ç®—äº†çš„å°±ä¸ç”¨è®¡ç®—
 
 				if (k >= pu->get_k()) {
 					k_score = 1;
@@ -186,7 +186,7 @@ public:
 				vector<EC_Node*> &this_adj_nodes = it_candidate->first->get_adj_nodes();
 				int cnt_of_inner_node = 0;
 
-				//ĞÔÄÜÆ¿¾±
+				//æ€§èƒ½ç“¶é¢ˆ
 				for (int i = 0; i < this_adj_nodes.size(); i++) {
 					if (is_node_selecteds[this_adj_nodes[i]->get_id()]) {
 						cnt_of_inner_node++;
@@ -194,8 +194,8 @@ public:
 					if (cnt_of_inner_node > 1) break;
 				}
 
-				////openvetexÊÇÆÀ¼ÛÖ¸±ê
-				if (cnt_of_inner_node > 1) { //±ßÍ¼³É»·
+				////openvetexæ˜¯è¯„ä»·æŒ‡æ ‡
+				if (cnt_of_inner_node > 1) { //è¾¹å›¾æˆç¯
 					struct_score = 1;
 
 				}
@@ -205,7 +205,7 @@ public:
 				//struct_score = 0;
 				//struct_score = (double)rand() / RAND_MAX *0.3;
 				double score = (1 - w2) *k_score * s_score + w2*struct_score;
-				//Ñ¡ÔñµÃ·Ö×î¸ßµÄ
+				//é€‰æ‹©å¾—åˆ†æœ€é«˜çš„
 				if (score > maximal_score) {
 					maximal_score = score;
 					it_maximal_score = it_candidate;
@@ -223,18 +223,18 @@ public:
 
 	bool add_node_to_cloakset(LBS_User *&pu, EC_Node *new_node, vector<EC_Node*> &cloak_set, map<EC_Node*, pair<double, double>> &candidate_map)
 	{
-		//¸üĞÂÄäÃû¼¯ºÍºòÑ¡¼¯
+		//æ›´æ–°åŒ¿åé›†å’Œå€™é€‰é›†
 		const vector<double> &sensitive_vals = pu->get_sensitive_vals();
 		cloak_set.push_back(new_node);
 		is_node_selecteds[new_node->get_id()] = true;
 		Node *pn1, *pn2;
-		vector<EC_Node*> &adj_nodes = new_node->get_adj_nodes(); //Ö»Ó°Ïì¸Õ¼ÓÈëµÄ²¿·Ö
+		vector<EC_Node*> &adj_nodes = new_node->get_adj_nodes(); //åªå½±å“åˆšåŠ å…¥çš„éƒ¨åˆ†
 
 		for (int i = 0; i < adj_nodes.size(); i++) {
-			if (!is_node_candidate[adj_nodes[i]->get_id()] && !is_node_selecteds[adj_nodes[i]->get_id()]) { //¼ÓÈëºòÑ¡¼¯
+			if (!is_node_candidate[adj_nodes[i]->get_id()] && !is_node_selecteds[adj_nodes[i]->get_id()]) { //åŠ å…¥å€™é€‰é›†
 				double candidate_edge_svalue = 0.0, candidate_edge_pop = 0.0;
 				const vector<Poi*> &e_pois = adj_nodes[i]->get_pois();
-				for (int j = 0; j < e_pois.size(); j++) { //¶à¸öĞËÈ¤µã
+				for (int j = 0; j < e_pois.size(); j++) { //å¤šä¸ªå…´è¶£ç‚¹
 					int poi_type = (int)e_pois[j]->get_type();
 					candidate_edge_svalue += (sensitive_vals[poi_type] * e_pois[j]->get_pop());
 					candidate_edge_pop += e_pois[j]->get_pop();
@@ -243,13 +243,13 @@ public:
 				is_node_candidate[adj_nodes[i]->get_id()] = true;
 			}
 		}
-		//¼ÆËãµ±Ç°×´Ì¬
+		//è®¡ç®—å½“å‰çŠ¶æ€
 		k += new_node->get_users().size();
 		l++;
 		double candidate_svalue = 0.0, candidate_pop = 0.0;
-		if (!is_node_candidate[new_node->get_id()]) { //µÚÒ»´ÎÖ´ĞĞĞèÒªÔÙ¼ÆËã±ßÉÏµÄĞËÈ¤µã
+		if (!is_node_candidate[new_node->get_id()]) { //ç¬¬ä¸€æ¬¡æ‰§è¡Œéœ€è¦å†è®¡ç®—è¾¹ä¸Šçš„å…´è¶£ç‚¹
 			const vector<Poi*> &e_pois = new_node->get_pois();
-			for (int j = 0; j < e_pois.size(); j++) { //¶à¸öĞËÈ¤µã
+			for (int j = 0; j < e_pois.size(); j++) { //å¤šä¸ªå…´è¶£ç‚¹
 				int poi_type = (int)e_pois[j]->get_type();
 				candidate_svalue += (sensitive_vals[poi_type] * e_pois[j]->get_pop());
 				candidate_pop += e_pois[j]->get_pop();
@@ -277,21 +277,21 @@ public:
 		return v_success;
 	}
 private:
-	//Ã¿¸öÄäÃûÓÃ»§
+	//æ¯ä¸ªåŒ¿åç”¨æˆ·
 	int k, l;
-	bool *is_node_selecteds; //hash set²åÈëËÙ¶ÈºÃÂı
+	bool *is_node_selecteds; //hash setæ’å…¥é€Ÿåº¦å¥½æ…¢
 	bool *is_node_candidate; 
 	bool is_success;
 	double accumulate_svalue, accumulate_pop;
-	//Í³¼ÆĞÅÏ¢
+	//ç»Ÿè®¡ä¿¡æ¯
 	vector<bool> v_success;
 	vector<LBS_User*> users;
 	vector<vector<EC_Node*>> vv_cloak_sets;
 	double anonymization_time_total;
 	int cnt_of_success;
 	int cnt_of_failure;
-	vector<int> open_vetex_cnt; //½«ÓÃÓÚÒÔÈ¨Öµ¼õÈ¥»·Êı
-	int l_max; //ÄäÃû¼¯×î¶àÑ¡Ôñl_maxÌõ±ß,·ñÔòÊ§°Ü
+	vector<int> open_vetex_cnt; //å°†ç”¨äºä»¥æƒå€¼å‡å»ç¯æ•°
+	int l_max; //åŒ¿åé›†æœ€å¤šé€‰æ‹©l_maxæ¡è¾¹,å¦åˆ™å¤±è´¥
 	EC_Graph *p_graph;
 };
 

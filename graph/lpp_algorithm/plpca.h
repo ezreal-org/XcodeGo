@@ -10,16 +10,16 @@
 using namespace std;
 
 /*
-	ÔÚ±ßÍ¼ÖĞÖ´ĞĞËã·¨£¬¹ã¶ÈÓÅÏÈµÄ·½·¨ÕÒÒ»¸ö»·
-	ÕÒ»·ÀàËÆÑ¦½¿ÎÄÕÂ,Ê÷ĞÎ½á¹¹
-	¼ÙÈç¹¥»÷Õß²»ÖªµÀ±ßÍ¼µÄ×ª»»ºÍÄäÃûËã·¨£¬¾ÍÊÇ¹¥»÷Õß
-	ÓĞµØÍ¼µÄĞÅÏ¢£¬Ã¿¸öÂ·¶ÎµÄÁ÷Á¿ĞÅÏ¢£»¹¥»÷Õß»ñµÃÄäÃû¼¯
-	ºó²»ÄÜÓĞĞ§µÄÖ´ĞĞ¹¥»÷¡£×÷ÕßÊ¹ÓÃ±ßÍ¼À´¿ìËÙÕÒµ½Ò»Ìõ±ßÖÜÎ§µÄ
-	ÁÚ¾Ó±ßºÍÒş²ØÒÔÉÏÁ½ÖÖĞÅÏ¢¡£
+	åœ¨è¾¹å›¾ä¸­æ‰§è¡Œç®—æ³•ï¼Œå¹¿åº¦ä¼˜å…ˆçš„æ–¹æ³•æ‰¾ä¸€ä¸ªç¯
+	æ‰¾ç¯ç±»ä¼¼è–›å¨‡æ–‡ç« ,æ ‘å½¢ç»“æ„
+	å‡å¦‚æ”»å‡»è€…ä¸çŸ¥é“è¾¹å›¾çš„è½¬æ¢å’ŒåŒ¿åç®—æ³•ï¼Œå°±æ˜¯æ”»å‡»è€…
+	æœ‰åœ°å›¾çš„ä¿¡æ¯ï¼Œæ¯ä¸ªè·¯æ®µçš„æµé‡ä¿¡æ¯ï¼›æ”»å‡»è€…è·å¾—åŒ¿åé›†
+	åä¸èƒ½æœ‰æ•ˆçš„æ‰§è¡Œæ”»å‡»ã€‚ä½œè€…ä½¿ç”¨è¾¹å›¾æ¥å¿«é€Ÿæ‰¾åˆ°ä¸€æ¡è¾¹å‘¨å›´çš„
+	é‚»å±…è¾¹å’Œéšè—ä»¥ä¸Šä¸¤ç§ä¿¡æ¯ã€‚
 
-	Îª·½±ã±È½Ï×öÒÔÏÂµ÷Õû£¬¼ÙÉè¹¥»÷ÕßÖªµÀÄäÃûËã·¨ºÍ±ßÍ¼µÄ×ª»»£¬
-	¹ã¶ÈÓÅÏÈ½øĞĞ±éÀú,½øĞĞ l_require < L < l_max ÂÖ£¬È¡Âú×ãÒşË½ÒªÇó
-	µÄ×îĞ¡»·
+	ä¸ºæ–¹ä¾¿æ¯”è¾ƒåšä»¥ä¸‹è°ƒæ•´ï¼Œå‡è®¾æ”»å‡»è€…çŸ¥é“åŒ¿åç®—æ³•å’Œè¾¹å›¾çš„è½¬æ¢ï¼Œ
+	å¹¿åº¦ä¼˜å…ˆè¿›è¡Œéå†,è¿›è¡Œ l_require < L < l_max è½®ï¼Œå–æ»¡è¶³éšç§è¦æ±‚
+	çš„æœ€å°ç¯
 */
 class Lppa_plpca
 {
@@ -53,9 +53,9 @@ public:
 		cout << "total time consume:" << time_cost << endl;
 		cout << "success:" << cnt_of_success << endl;
 		cout << "failure:" << cnt_of_failure << endl;
-		//Í³¼Æ
-		//ÕâÒ»¿é½«²»¼ÆÈëÄäÃûÊ±¼ä£¬Ö»ÊÇÓÃÓÚ·ÖÎöËã·¨ĞÔÄÜ
-		//¿ª·Å½Úµã´¦ÓÚÔËĞĞÊ±Î´¾ö×´Ì¬,Ö»×÷ÎªÆÀ¼ÛÖ¸±ê
+		//ç»Ÿè®¡
+		//è¿™ä¸€å—å°†ä¸è®¡å…¥åŒ¿åæ—¶é—´ï¼Œåªæ˜¯ç”¨äºåˆ†æç®—æ³•æ€§èƒ½
+		//å¼€æ”¾èŠ‚ç‚¹å¤„äºè¿è¡Œæ—¶æœªå†³çŠ¶æ€,åªä½œä¸ºè¯„ä»·æŒ‡æ ‡
 		cout << "calculate open vetex begin:" << endl;
 		set<Node*> node_set;
 		set<Node*>::iterator it_node_set;
@@ -69,13 +69,13 @@ public:
 			cloak_set.clear();
 			for (int j = 0; j < vv_cloaks[i].size(); j++)
 				cloak_set.push_back(vv_cloaks[i][j]->get_src_edge());
-			if (cloak_set.size() < 1) { //ÄäÃûÊ§°Ü,Ã»ÓĞÕÒµ½»·£¬ÔÚÍ³¼ÆÖĞËãl_max
+			if (cloak_set.size() < 1) { //åŒ¿åå¤±è´¥,æ²¡æœ‰æ‰¾åˆ°ç¯ï¼Œåœ¨ç»Ÿè®¡ä¸­ç®—l_max
 				all_edge_size += l_max;
 				all_openvetex_cnt += l_max;
 				continue;
 			}
 			node_set.clear();
-			//³õÊ¼»¯Ïà¹Ø¶¥µã¼¯
+			//åˆå§‹åŒ–ç›¸å…³é¡¶ç‚¹é›†
 			for (int kk = 0; kk < cloak_set.size(); kk++) {
 				Node *pn1, *pn2;
 				pn1 = cloak_set[kk]->getNode1();
@@ -91,8 +91,8 @@ public:
 			int cnt_of_openvetex = 0;
 			for (it_node_set = node_set.begin(); it_node_set != node_set.end(); it_node_set++) {
 				adj_edges = (*it_node_set)->getAdjEdges();
-				for (int j = 0; j < adj_edges.size(); j++) { //ÅĞ¶ÏËùÓĞÁÙ½ü±ßÊÇ·ñ¶¼ÔÚÄäÃû¼¯
-					if (!vector_find(cloak_set, adj_edges[j])) { //Ã»ÕÒµ½,»¹¼ÆËãÓĞ¶àÉÙÔÚ£¿
+				for (int j = 0; j < adj_edges.size(); j++) { //åˆ¤æ–­æ‰€æœ‰ä¸´è¿‘è¾¹æ˜¯å¦éƒ½åœ¨åŒ¿åé›†
+					if (!vector_find(cloak_set, adj_edges[j])) { //æ²¡æ‰¾åˆ°,è¿˜è®¡ç®—æœ‰å¤šå°‘åœ¨ï¼Ÿ
 						cnt_of_openvetex++;
 						break;
 					}
@@ -108,26 +108,26 @@ public:
 
 	}
 
-	vector<EC_Node*> plpca(LBS_User *pu,EC_Node * const pn) //Îª¸ÃÓÃ»§Ö´ĞĞËã·¨
+	vector<EC_Node*> plpca(LBS_User *pu,EC_Node * const pn) //ä¸ºè¯¥ç”¨æˆ·æ‰§è¡Œç®—æ³•
 	{
-		map<pair<int,EC_Node*>, pair<int, EC_Node*>> pre_map; //ÎªÃ¿¸öÓÃ»§Ö´ĞĞÄäÃûËã·¨Ê±£¬¼ÇÂ¼Ç°Çı,int±íÊ¾Î»ÖÃ£¬EC_Node*±íÊ¾Ä³¸ö½Úµã
-		vector<vector<EC_Node*>> vv_circles; //µÃµ½¶à¸ö»·
+		map<pair<int,EC_Node*>, pair<int, EC_Node*>> pre_map; //ä¸ºæ¯ä¸ªç”¨æˆ·æ‰§è¡ŒåŒ¿åç®—æ³•æ—¶ï¼Œè®°å½•å‰é©±,intè¡¨ç¤ºä½ç½®ï¼ŒEC_Node*è¡¨ç¤ºæŸä¸ªèŠ‚ç‚¹
+		vector<vector<EC_Node*>> vv_circles; //å¾—åˆ°å¤šä¸ªç¯
 		vector<EC_Node*> expand_queue;
-		vector<EC_Node*> v_cloak; //ÄäÃû¼¯
-		int lay_now,size_of_this_lay; // accumulate_expand_index Æğµ½ÀàËÆ¹şÏ£µÄ×÷ÓÃ,Í¬Ò»¸öEC_NodeËüµÄÇ°ÇıÔÚ²»Í¬²ã²»Í¬Î»ÖÃµÄÇ°Çı²»Ò»ÖÂ;±íÃ÷À©Õ¹Ê±µÚ¼¸¸ö´¦Àíµ½¸Ã¶¥µã
+		vector<EC_Node*> v_cloak; //åŒ¿åé›†
+		int lay_now,size_of_this_lay; // accumulate_expand_index èµ·åˆ°ç±»ä¼¼å“ˆå¸Œçš„ä½œç”¨,åŒä¸€ä¸ªEC_Nodeå®ƒçš„å‰é©±åœ¨ä¸åŒå±‚ä¸åŒä½ç½®çš„å‰é©±ä¸ä¸€è‡´;è¡¨æ˜æ‰©å±•æ—¶ç¬¬å‡ ä¸ªå¤„ç†åˆ°è¯¥é¡¶ç‚¹
 		int accumulate_queue_index = 0, accumulate_expand_index = 0;
 		expand_queue.push_back(pn);
 		pre_map.clear();
-		pre_map[make_pair(0,pn)] = make_pair(-1,pn); //ÆğµãÇ°ÇıÎª¿Õ
+		pre_map[make_pair(0,pn)] = make_pair(-1,pn); //èµ·ç‚¹å‰é©±ä¸ºç©º
 		size_of_this_lay = 1;
-		//»ñµÃËùÓĞ»·
+		//è·å¾—æ‰€æœ‰ç¯
 		for (lay_now=0; lay_now < l_max; lay_now++) {
 			int size_of_next_lay = 0;
 			for (int i = 0; i < size_of_this_lay; i++) {
 				EC_Node *node_now = expand_queue[accumulate_queue_index];
 				vector<EC_Node*> &adj_nodes = node_now->get_adj_nodes();
 				for (int j = 0; j < adj_nodes.size(); j++) {
-					if (adj_nodes[j] == pn && lay_now>1) { //ÕÒµ½Ò»¸ö»·,»·ÆğÂëÓĞÈıÌõ±ß
+					if (adj_nodes[j] == pn && lay_now>1) { //æ‰¾åˆ°ä¸€ä¸ªç¯,ç¯èµ·ç æœ‰ä¸‰æ¡è¾¹
 						EC_Node* p_node = node_now;
 						vector<EC_Node*> simple_circle;
 						simple_circle.push_back(pn);
@@ -140,15 +140,15 @@ public:
 						vv_circles.push_back(simple_circle);
 					}
 					else{
-						//ĞÂÔöµÄ¶¥µã£¬Îª´ïµ½»·µÄ½á¹¹£¬Ó¦¸ÃÔÚ¹ã¶ÈÓÅÏÈµÄÄ³ÌõÀ©Õ¹Â·¾¶ÉÏ²»ÖØ¸´
-						if (adj_nodes[j] == pn) continue; //ÕâÖÖÎª»·Ö»ÓĞÁ½Ìõ±ßµÄÇéĞÎ£¬¼´Í¨¹ıµÚÒ»²ã¶¥µã¾ÍÕÒµ½³ö·¢µã
+						//æ–°å¢çš„é¡¶ç‚¹ï¼Œä¸ºè¾¾åˆ°ç¯çš„ç»“æ„ï¼Œåº”è¯¥åœ¨å¹¿åº¦ä¼˜å…ˆçš„æŸæ¡æ‰©å±•è·¯å¾„ä¸Šä¸é‡å¤
+						if (adj_nodes[j] == pn) continue; //è¿™ç§ä¸ºç¯åªæœ‰ä¸¤æ¡è¾¹çš„æƒ…å½¢ï¼Œå³é€šè¿‡ç¬¬ä¸€å±‚é¡¶ç‚¹å°±æ‰¾åˆ°å‡ºå‘ç‚¹
 						pair<int, EC_Node*> p_node_info = pre_map[make_pair(accumulate_queue_index, node_now)];
 						while (p_node_info.second != pn) { 
 							if (p_node_info.second == adj_nodes[j])
 								break;
 							p_node_info = pre_map[p_node_info];
 						}
-						if (p_node_info.second == pn) {  //Â·¾¶ÉÏ²»ÖØ¸´
+						if (p_node_info.second == pn) {  //è·¯å¾„ä¸Šä¸é‡å¤
 							expand_queue.push_back(adj_nodes[j]);
 							pre_map[make_pair(++accumulate_expand_index, adj_nodes[j])] = make_pair(accumulate_queue_index, node_now);
 							size_of_next_lay++;
@@ -159,9 +159,9 @@ public:
 			}
 			size_of_this_lay = size_of_next_lay;
 		}// end for
-		//È·¶¨Âú×ãÒªÇóµÄ×îĞ¡»¹
+		//ç¡®å®šæ»¡è¶³è¦æ±‚çš„æœ€å°è¿˜
 		int size_of_circle = vv_circles.size();
-		//°´±ßÊıÅÅĞò
+		//æŒ‰è¾¹æ•°æ’åº
 		for (int i = 0; i < size_of_circle-1; i++) {
 			int minimal_index = i;
 			vector<EC_Node*> temp;
@@ -175,19 +175,19 @@ public:
 				vv_circles[minimal_index] = temp;
 			}
 		}
-		//ÕÒ×îĞ¡Âú×ãÒªÇóµÄ»·
+		//æ‰¾æœ€å°æ»¡è¶³è¦æ±‚çš„ç¯
 		vector<double> sensitive_vals = pu->get_sensitive_vals();
 		is_success = false;
 		for (int i = 0; i < size_of_circle; i++) {
 			int edge_size = vv_circles[i].size();
-			if (edge_size < pu->get_l()) continue; //±ßÊıÉÙÓÚÓÃ»§ĞèÇól
+			if (edge_size < pu->get_l()) continue; //è¾¹æ•°å°‘äºç”¨æˆ·éœ€æ±‚l
 			double accumulate_svalue = 0.0, accumulate_pop = 0.0;
 			int k_value = 0, l_value = edge_size;
 			for (int j = 0; j < edge_size; j++) {
 				Edge *p_edge = vv_circles[i][j]->get_src_edge();
 				k_value += p_edge->get_users().size();
 				vector<Poi*> e_pois = p_edge->get_pois();
-				for (int m = 0; m < e_pois.size(); m++) { //¶à¸öĞËÈ¤µã
+				for (int m = 0; m < e_pois.size(); m++) { //å¤šä¸ªå…´è¶£ç‚¹
 					int poi_type = (int)e_pois[m]->get_type();
 					accumulate_svalue += (sensitive_vals[poi_type] * e_pois[m]->get_pop());
 					accumulate_pop += e_pois[m]->get_pop();
@@ -217,15 +217,15 @@ public:
 	}
 private:
 	vector<vector<EC_Node*>> vv_cloaks;
-	bool is_success; //¼ÇÂ¼¸ÃÓÃ»§ÄäÃûÊÇ·ñ³É¹¦
+	bool is_success; //è®°å½•è¯¥ç”¨æˆ·åŒ¿åæ˜¯å¦æˆåŠŸ
 	vector<bool> v_success;
 	vector<LBS_User*> users;
-	//Í³¼ÆĞÅÏ¢
+	//ç»Ÿè®¡ä¿¡æ¯
 	double anonymization_time_total;
 	int cnt_of_success;
 	int cnt_of_failure;
-	vector<int> open_vetex_cnt; //½«ÓÃÓÚÒÔÈ¨Öµ¼õÈ¥»·Êı
-	int l_max; //ÄäÃû¼¯×î¶àÑ¡Ôñl_maxÌõ±ß,·ñÔòÊ§°Ü
+	vector<int> open_vetex_cnt; //å°†ç”¨äºä»¥æƒå€¼å‡å»ç¯æ•°
+	int l_max; //åŒ¿åé›†æœ€å¤šé€‰æ‹©l_maxæ¡è¾¹,å¦åˆ™å¤±è´¥
 	EC_Graph *p_graph;
 };
 #endif

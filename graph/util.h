@@ -6,30 +6,17 @@
 #include <string>
 using namespace std;
 
-//template<typename T>
-//bool vector_find(vector<T> &v_input,T &value)
-//{
-//    vector<T>::iterator it_v;
-//    for (it_v = v_input.begin(); it_v != v_input.end(); it_v++) {
-//        if (*it_v == value) {
-//            break;
-//        }
-//    }
-//    if (it_v == v_input.end()) return false;
-//    return true;
-//}
-
-//bool vv_find(vector<EC_Node*> &v_input, EC_Node* value)
-//{
-//    vector<EC_Node *>::iterator it_v;
-//    for (it_v = v_input.begin(); it_v != v_input.end(); it_v++) {
-//        if (*it_v == value) {
-//            break;
-//        }
-//    }
-//    if (it_v == v_input.end()) return false;
-//    return true;
-//}
+template<typename T>
+bool vector_find(vector<T> &v_input,T &value)
+{
+    size_t v_size = v_input.size();
+    for(size_t i=0;i<v_size;i++){
+        if(v_input[i]==value){
+            return true;
+        }
+    }
+    return false;
+}
 
 //地图配置文件解析
 class Graph_Config
@@ -40,7 +27,7 @@ public:
 	{
 		ifstream config_file;
 		config_file.open(path);
-		if (config_file.bad()) {
+		if (!config_file) {
 			cout << "文件打开失败" << endl;
 			return;
 		}

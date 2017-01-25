@@ -11,6 +11,7 @@
 
 #include <QFrame>
 #include <QWidget>
+#include "graph/draw_util.h"
 
 class Frame_Painter :public QFrame
 {
@@ -23,6 +24,7 @@ private slots:
     void paintEvent(QPaintEvent*);
 public:
     QPixmap *p_pixmap;
+    Draw_Util *p_du;
 };
 
 #endif /* widget_painter_h */

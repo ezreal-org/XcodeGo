@@ -29,7 +29,7 @@ void Frame_Painter::paintEvent(QPaintEvent *e)
     Q_UNUSED(e);
     if(p_pixmap!=nullptr){
         QPainter painter(this);
-        painter.drawPixmap(0,0,100,100,*p_pixmap);
+        painter.drawPixmap(0,0,p_du->get_paint_sizex(),p_du->get_paint_sizey(),*p_pixmap);
     }
     cout << "wp painter---" << endl;
 }

@@ -40,12 +40,14 @@ public:
     QComboBox *comboBox;
     QLabel *label;
     QLabel *label_2;
+    QPushButton *btn_zoom_in;
+    QPushButton *btn_zoom_out;
 
     void setupUi(QMainWindow *ntiss)
     {
         if (ntiss->objectName().isEmpty())
             ntiss->setObjectName(QStringLiteral("ntiss"));
-        ntiss->resize(609, 600);
+        ntiss->resize(626, 600);
         QPalette palette;
         QBrush brush(QColor(255, 0, 0, 255));
         brush.setStyle(Qt::SolidPattern);
@@ -61,40 +63,40 @@ public:
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         pushButton = new QPushButton(centralWidget);
         pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(510, 530, 91, 32));
+        pushButton->setGeometry(QRect(520, 530, 91, 32));
         widget = new Frame_Painter(centralWidget);
         widget->setObjectName(QStringLiteral("widget"));
-        widget->setGeometry(QRect(10, 10, 481, 550));
+        widget->setGeometry(QRect(10, 10, 500, 550));
         widget->setFrameShape(QFrame::NoFrame);
         widget->setFrameShadow(QFrame::Plain);
         widget->setMidLineWidth(1);
         widget_2 = new QFrame(widget);
         widget_2->setObjectName(QStringLiteral("widget_2"));
-        widget_2->setGeometry(QRect(0, 0, 481, 551));
+        widget_2->setGeometry(QRect(0, 0, 500, 550));
         widget_2->setFrameShape(QFrame::StyledPanel);
         widget_2->setFrameShadow(QFrame::Plain);
         widget_2->setMidLineWidth(1);
         pushButton_6 = new QPushButton(centralWidget);
         pushButton_6->setObjectName(QStringLiteral("pushButton_6"));
-        pushButton_6->setGeometry(QRect(520, 420, 60, 32));
+        pushButton_6->setGeometry(QRect(536, 420, 60, 32));
         pushButton_7 = new QPushButton(centralWidget);
         pushButton_7->setObjectName(QStringLiteral("pushButton_7"));
-        pushButton_7->setGeometry(QRect(490, 450, 60, 32));
+        pushButton_7->setGeometry(QRect(510, 450, 60, 32));
         pushButton_2 = new QPushButton(centralWidget);
         pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
-        pushButton_2->setGeometry(QRect(520, 480, 60, 32));
+        pushButton_2->setGeometry(QRect(536, 480, 60, 32));
         pushButton_3 = new QPushButton(centralWidget);
         pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
-        pushButton_3->setGeometry(QRect(550, 450, 60, 32));
+        pushButton_3->setGeometry(QRect(568, 450, 60, 32));
         btn_draw_ec = new QPushButton(centralWidget);
         btn_draw_ec->setObjectName(QStringLiteral("btn_draw_ec"));
-        btn_draw_ec->setGeometry(QRect(510, 170, 91, 32));
+        btn_draw_ec->setGeometry(QRect(520, 170, 91, 32));
         btn_draw_src = new QPushButton(centralWidget);
         btn_draw_src->setObjectName(QStringLiteral("btn_draw_src"));
-        btn_draw_src->setGeometry(QRect(510, 140, 91, 32));
+        btn_draw_src->setGeometry(QRect(520, 140, 91, 32));
         comboBox = new QComboBox(centralWidget);
         comboBox->setObjectName(QStringLiteral("comboBox"));
-        comboBox->setGeometry(QRect(510, 30, 88, 32));
+        comboBox->setGeometry(QRect(520, 30, 88, 32));
         QPalette palette1;
         QBrush brush2(QColor(0, 0, 0, 255));
         brush2.setStyle(Qt::SolidPattern);
@@ -152,7 +154,7 @@ public:
         comboBox->setPalette(palette1);
         label = new QLabel(centralWidget);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(520, 60, 60, 16));
+        label->setGeometry(QRect(530, 60, 60, 16));
         label_2 = new QLabel(centralWidget);
         label_2->setObjectName(QStringLiteral("label_2"));
         label_2->setGeometry(QRect(210, 570, 170, 13));
@@ -207,6 +209,12 @@ public:
         font.setFamily(QStringLiteral("STHeiti"));
         label_2->setFont(font);
         label_2->setAlignment(Qt::AlignCenter);
+        btn_zoom_in = new QPushButton(centralWidget);
+        btn_zoom_in->setObjectName(QStringLiteral("btn_zoom_in"));
+        btn_zoom_in->setGeometry(QRect(520, 390, 91, 32));
+        btn_zoom_out = new QPushButton(centralWidget);
+        btn_zoom_out->setObjectName(QStringLiteral("btn_zoom_out"));
+        btn_zoom_out->setGeometry(QRect(520, 360, 91, 32));
         ntiss->setCentralWidget(centralWidget);
         pushButton->raise();
         pushButton_6->raise();
@@ -219,6 +227,8 @@ public:
         comboBox->raise();
         label->raise();
         label_2->raise();
+        btn_zoom_in->raise();
+        btn_zoom_out->raise();
 
         retranslateUi(ntiss);
 
@@ -242,6 +252,8 @@ public:
         );
         label->setText(QApplication::translate("ntiss", "\351\200\211\346\213\251\345\234\260\345\233\276", Q_NULLPTR));
         label_2->setText(QApplication::translate("ntiss", "Power by Jayce@ntiss.com", Q_NULLPTR));
+        btn_zoom_in->setText(QApplication::translate("ntiss", "\347\274\251\345\260\217", Q_NULLPTR));
+        btn_zoom_out->setText(QApplication::translate("ntiss", "\346\224\276\345\244\247", Q_NULLPTR));
     } // retranslateUi
 
 };

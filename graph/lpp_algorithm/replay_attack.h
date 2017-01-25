@@ -9,10 +9,10 @@
 #include "../edge_cluster_graph.h"
 #include "../util.h"
 /*
-¹¥»÷ÕßÖªµÀÓÃ»§ÔÚÒ»¸öÄäÃû¼¯sÖĞ£¬ÖªµÀÄäÃûËã·¨£¬²¢Í¨¹ı±³¾°ÖªÊ¶ÖªµÀÓÃ»§ÔÚÂ·ÍøµÄ·Ö²¼
-ÖªµÀÓÃ»§µÄÒşË½Æ«ºÃ(k,l,s,v),¹¥»÷ÕßÏë¶¨Î»ÓÃ»§ÕæÊµÎ»ÖÃËùÔÚµÄÂ·Íø±ß
-¹¥»÷ÕßÍ¨¹ı¼Ù¶¨ÓÃ»§ÔÚÄ³Ìõ±ß£¬È»ºóÖ´ĞĞÄäÃûËã·¨£¬µÃµ½Ò»¸öÄäÃû¼¯s',Í¨¹ı±È½ÏÁ½¸öÄäÃû¼¯µÄ
-ÏàËÆĞÔ
+æ”»å‡»è€…çŸ¥é“ç”¨æˆ·åœ¨ä¸€ä¸ªåŒ¿åé›†sä¸­ï¼ŒçŸ¥é“åŒ¿åç®—æ³•ï¼Œå¹¶é€šè¿‡èƒŒæ™¯çŸ¥è¯†çŸ¥é“ç”¨æˆ·åœ¨è·¯ç½‘çš„åˆ†å¸ƒ
+çŸ¥é“ç”¨æˆ·çš„éšç§åå¥½(k,l,s,v),æ”»å‡»è€…æƒ³å®šä½ç”¨æˆ·çœŸå®ä½ç½®æ‰€åœ¨çš„è·¯ç½‘è¾¹
+æ”»å‡»è€…é€šè¿‡å‡å®šç”¨æˆ·åœ¨æŸæ¡è¾¹ï¼Œç„¶åæ‰§è¡ŒåŒ¿åç®—æ³•ï¼Œå¾—åˆ°ä¸€ä¸ªåŒ¿åé›†s',é€šè¿‡æ¯”è¾ƒä¸¤ä¸ªåŒ¿åé›†çš„
+ç›¸ä¼¼æ€§
 */
 class Replay_attack
 {
@@ -21,9 +21,9 @@ public:
 	{
 		this->p_graph = p_graph;
 		srand((unsigned)time(NULL));
-		sa_attack();
-		plpca_attack();
-		ec_sae_attack();
+        sa_attack();
+        plpca_attack();
+        ec_sae_attack();
 
 	}
 	void sa_attack()
@@ -37,13 +37,13 @@ public:
 		vector<bool> is_success = p_sa->get_v_success();
 		vector<vector<Edge*>> vv_cloak_set = p_sa->get_vv_cloaks();
 
-		for (int i = 0; i < users.size(); i++) { //¶ÔÓÃ»§iµÄÄäÃû¼¯ vv_cloak[i]½øĞĞ¹¥»÷
+		for (int i = 0; i < users.size(); i++) { //å¯¹ç”¨æˆ·içš„åŒ¿åé›† vv_cloak[i]è¿›è¡Œæ”»å‡»
 			double maximal_similarity = 0;
-			vector<Edge*> maximal_edges; //×î´óÏàËÆ¶ÈµÄ¿ÉÄÜÓĞ¶àÌõ±ß
-			if (!is_success[i]) continue; //²»¿¼ÂÇÎ´³É¹¦µÄÄäÃû
+			vector<Edge*> maximal_edges; //æœ€å¤§ç›¸ä¼¼åº¦çš„å¯èƒ½æœ‰å¤šæ¡è¾¹
+			if (!is_success[i]) continue; //ä¸è€ƒè™‘æœªæˆåŠŸçš„åŒ¿å
 			for (int j = 0; j < vv_cloak_set[i].size(); j++) {
 				if (vv_cloak_set[i][j]->get_users().size() < 1) continue;
-				vector<Edge*>sa_cs= p_sa->sa(users[i], vv_cloak_set[i][j]); //¼Ù¶¨ÔÚÓÃ»§ÔÚÄäÃû¼¯µÄÄ³Ìõ±ßÉÏ
+				vector<Edge*>sa_cs= p_sa->sa(users[i], vv_cloak_set[i][j]); //å‡å®šåœ¨ç”¨æˆ·åœ¨åŒ¿åé›†çš„æŸæ¡è¾¹ä¸Š
 				double set_similarity = calculate_set_similarity(vv_cloak_set[i], sa_cs);
 				if (fabs(set_similarity - maximal_similarity) < 0.001) {
 					maximal_edges.push_back(vv_cloak_set[i][j]);
@@ -57,11 +57,11 @@ public:
 			int selected_index = rand() % maximal_edges.size();
 			vector<LBS_User*> users_in_edge = maximal_edges[selected_index]->get_users();
 			cnt_of_attack++;
-			if (vector_find(users_in_edge, users[i])) { //ÓÃ»§È·ÊµÔÚ´Ë±ßÉÏ£¬¹¥»÷³É¹¦
+			if (vector_find(users_in_edge, users[i])) { //ç”¨æˆ·ç¡®å®åœ¨æ­¤è¾¹ä¸Šï¼Œæ”»å‡»æˆåŠŸ
 				cnt_of_success++;
 			}
 		}
-		cout << "·¢Æğ:" << cnt_of_attack << "´Î¹¥»÷,ÆäÖĞ³É¹¦:" << cnt_of_success << endl;
+        cout << "attack nums:" << cnt_of_attack << " success numsï¼š" << cnt_of_success << endl;
 		cout << "------" << endl;
 		delete p_sa;
 	}
@@ -76,13 +76,13 @@ public:
 		vector<bool> is_success = p_sa->get_v_success();
 		vector<vector<EC_Node*>> vv_cloak_set = p_sa->get_vv_cloak();
 
-		for (int i = 0; i < users.size(); i++) { //¶ÔÓÃ»§iµÄÄäÃû¼¯ vv_cloak[i]½øĞĞ¹¥»÷
+		for (int i = 0; i < users.size(); i++) { //å¯¹ç”¨æˆ·içš„åŒ¿åé›† vv_cloak[i]è¿›è¡Œæ”»å‡»
 			double maximal_similarity = 0;
-			vector<EC_Node*> maximal_edges; //×î´óÏàËÆ¶ÈµÄ¿ÉÄÜÓĞ¶àÌõ±ß
-			if (!is_success[i]) continue; //²»¿¼ÂÇÎ´³É¹¦µÄÄäÃû
+			vector<EC_Node*> maximal_edges; //æœ€å¤§ç›¸ä¼¼åº¦çš„å¯èƒ½æœ‰å¤šæ¡è¾¹
+			if (!is_success[i]) continue; //ä¸è€ƒè™‘æœªæˆåŠŸçš„åŒ¿å
 			for (int j = 0; j < vv_cloak_set[i].size(); j++) {
 				if (vv_cloak_set[i][j]->get_users().size() < 1) continue;
-				vector<EC_Node*>sa_cs = p_sa->plpca(users[i], vv_cloak_set[i][j]); //¼Ù¶¨ÔÚÓÃ»§ÔÚÄäÃû¼¯µÄÄ³Ìõ±ßÉÏ
+				vector<EC_Node*>sa_cs = p_sa->plpca(users[i], vv_cloak_set[i][j]); //å‡å®šåœ¨ç”¨æˆ·åœ¨åŒ¿åé›†çš„æŸæ¡è¾¹ä¸Š
 				double set_similarity = calculate_set_similarity(vv_cloak_set[i], sa_cs);
 				if (fabs(set_similarity - maximal_similarity) < 0.001) {
 					maximal_edges.push_back(vv_cloak_set[i][j]);
@@ -96,11 +96,11 @@ public:
 			int selected_index = rand() % maximal_edges.size();
 			vector<LBS_User*> users_in_edge = maximal_edges[selected_index]->get_users();
 			cnt_of_attack++;
-			if (vector_find(users_in_edge, users[i])) { //ÓÃ»§È·ÊµÔÚ´Ë±ßÉÏ£¬¹¥»÷³É¹¦
+			if (vector_find(users_in_edge, users[i])) { //ç”¨æˆ·ç¡®å®åœ¨æ­¤è¾¹ä¸Šï¼Œæ”»å‡»æˆåŠŸ
 				cnt_of_success++;
 			}
 		}
-		cout << "·¢Æğ:" << cnt_of_attack << "´Î¹¥»÷,ÆäÖĞ³É¹¦:" << cnt_of_success << endl;
+        cout << "attack nums:" << cnt_of_attack << "  success:" << cnt_of_success << endl;
 		cout << "------" << endl;
 		delete p_sa;
 	}
@@ -115,13 +115,13 @@ public:
 		vector<bool> is_success = p_sa->get_v_success();
 		vector<vector<EC_Node*>> vv_cloak_set = p_sa->get_vv_cloak();
 
-		for (int i = 0; i < users.size(); i++) { //¶ÔÓÃ»§iµÄÄäÃû¼¯ vv_cloak[i]½øĞĞ¹¥»÷
+		for (int i = 0; i < users.size(); i++) { //å¯¹ç”¨æˆ·içš„åŒ¿åé›† vv_cloak[i]è¿›è¡Œæ”»å‡»
 			double maximal_similarity = 0;
-			vector<EC_Node*> maximal_edges; //×î´óÏàËÆ¶ÈµÄ¿ÉÄÜÓĞ¶àÌõ±ß
-			if (!is_success[i]) continue; //²»¿¼ÂÇÎ´³É¹¦µÄÄäÃû
+			vector<EC_Node*> maximal_edges; //æœ€å¤§ç›¸ä¼¼åº¦çš„å¯èƒ½æœ‰å¤šæ¡è¾¹
+			if (!is_success[i]) continue; //ä¸è€ƒè™‘æœªæˆåŠŸçš„åŒ¿å
 			for (int j = 0; j < vv_cloak_set[i].size(); j++) {
 				if (vv_cloak_set[i][j]->get_users().size() < 1) continue;
-				vector<EC_Node*>sa_cs = p_sa->ec_sae(users[i], vv_cloak_set[i][j]); //¼Ù¶¨ÔÚÓÃ»§ÔÚÄäÃû¼¯µÄÄ³Ìõ±ßÉÏ
+				vector<EC_Node*>sa_cs = p_sa->ec_sae(users[i], vv_cloak_set[i][j]); //å‡å®šåœ¨ç”¨æˆ·åœ¨åŒ¿åé›†çš„æŸæ¡è¾¹ä¸Š
 				double set_similarity = calculate_set_similarity(vv_cloak_set[i], sa_cs);
 				if (fabs(set_similarity - maximal_similarity) < 0.001) {
 					maximal_edges.push_back(vv_cloak_set[i][j]);
@@ -135,11 +135,11 @@ public:
 			int selected_index = rand() % maximal_edges.size();
 			vector<LBS_User*> users_in_edge = maximal_edges[selected_index]->get_users();
 			cnt_of_attack++;
-			if (vector_find(users_in_edge, users[i])) { //ÓÃ»§È·ÊµÔÚ´Ë±ßÉÏ£¬¹¥»÷³É¹¦
+			if (vector_find(users_in_edge, users[i])) { //ç”¨æˆ·ç¡®å®åœ¨æ­¤è¾¹ä¸Šï¼Œæ”»å‡»æˆåŠŸ
 				cnt_of_success++;
 			}
 		}
-		cout << "·¢Æğ:" << cnt_of_attack << "´Î¹¥»÷,ÆäÖĞ³É¹¦:" << cnt_of_success << endl;
+        cout << "attack nums:" << cnt_of_attack << " success nums:" << cnt_of_success << endl;
 		cout << "------" << endl;
 		delete p_sa;
 	}
@@ -152,7 +152,7 @@ public:
 			if (vector_find(cs, ra_cs[i])) {
 				size_intersection++;
 			}
-			else { //³öÏÖĞÂ±ß
+			else { //å‡ºç°æ–°è¾¹
 				size_union++;
 			}
 		}
@@ -160,7 +160,7 @@ public:
 	}
 private:
 	EC_Graph *p_graph;
-	double cnt_of_success; //³É¹¦µÄ´ÎÊı
-	double cnt_of_attack; //¹¥»÷µÄ´ÎÊı
+	double cnt_of_success; //æˆåŠŸçš„æ¬¡æ•°
+	double cnt_of_attack; //æ”»å‡»çš„æ¬¡æ•°
 };
 #endif
