@@ -3,7 +3,7 @@
 #include "../edge_cluster_graph.h"
 #include "../lbs_user.h"
 #include "../poi.h"
-#include "util.h"
+#include "../util.h"
 #include <vector>
 #include <set>
 #include <map>
@@ -70,8 +70,8 @@ public:
 			for (int j = 0; j < vv_cloaks[i].size(); j++)
 				cloak_set.push_back(vv_cloaks[i][j]->get_src_edge());
 			if (cloak_set.size() < 1) { //匿名失败,没有找到环，在统计中算l_max
-				all_edge_size += l_max;
-				all_openvetex_cnt += l_max;
+				//all_edge_size += l_max;
+				//all_openvetex_cnt += l_max;
 				continue;
 			}
 			node_set.clear();
@@ -103,8 +103,8 @@ public:
 			//cout << "open vetex: "<< cnt_of_openvetex << endl;
 			if (cnt_of_openvetex > 60) cout << "###" << endl;
 		}
-		cout << "average openvetex: " << (double)all_openvetex_cnt / user_cnt << endl;
-		cout << "average cloak size: " << (double)all_edge_size / user_cnt << endl;
+		cout << "average openvetex: " << (double)all_openvetex_cnt / cnt_of_success << endl;
+		cout << "average cloak size: " << (double)all_edge_size / cnt_of_success << endl;
 
 	}
 

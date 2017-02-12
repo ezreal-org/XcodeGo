@@ -9,10 +9,10 @@ enum Semantic_type
 {
 	school = 0,
 	hospital,
-	market,
 	bar,
-	residence,
-	company
+    company,
+    market,
+	residence
 };
 
 class Poi

@@ -1,6 +1,7 @@
 #ifndef REPLAY_ATTACK
 #define REPLAY_ATTACK
-#include "ec_sae.h"
+#include "cfso.h"
+#include "ar.h"
 #include "plpca.h"
 #include "sa.h"
 #include <vector>
@@ -22,9 +23,9 @@ public:
 		this->p_graph = p_graph;
 		srand((unsigned)time(NULL));
         sa_attack();
-        plpca_attack();
-        ec_sae_attack();
-
+       // plpca_attack();
+        cfso_attack();
+        ar_attack();
 	}
 	void sa_attack()
 	{
@@ -32,7 +33,7 @@ public:
 		p_sa->lpp();
 		cnt_of_attack = 0;
 		cnt_of_success = 0;
-		cout << "executing replay attack:" << endl;
+		cout << "executing replay attack to sa:" << endl;
 		vector<LBS_User*> users = p_sa->get_users();
 		vector<bool> is_success = p_sa->get_v_success();
 		vector<vector<Edge*>> vv_cloak_set = p_sa->get_vv_cloaks();
@@ -71,7 +72,7 @@ public:
 		p_sa->lpp();
 		cnt_of_attack = 0;
 		cnt_of_success = 0;
-		cout << "executing replay attack:" << endl;
+		cout << "executing replay attack to plpca:" << endl;
 		vector<LBS_User*> users = p_sa->get_users();
 		vector<bool> is_success = p_sa->get_v_success();
 		vector<vector<EC_Node*>> vv_cloak_set = p_sa->get_vv_cloak();
@@ -104,13 +105,13 @@ public:
 		cout << "------" << endl;
 		delete p_sa;
 	}
-	void ec_sae_attack()
+	void cfso_attack()
 	{
-		Lppa_ecsa_e *p_sa = new Lppa_ecsa_e(this->p_graph);
+		Lppa_cfso *p_sa = new Lppa_cfso(this->p_graph);
 		p_sa->lpp();
 		cnt_of_attack = 0;
 		cnt_of_success = 0;
-		cout << "executing replay attack:" << endl;
+		cout << "executing replay attack to cfso:" << endl;
 		vector<LBS_User*> users = p_sa->get_users();
 		vector<bool> is_success = p_sa->get_v_success();
 		vector<vector<EC_Node*>> vv_cloak_set = p_sa->get_vv_cloak();
@@ -143,8 +144,48 @@ public:
 		cout << "------" << endl;
 		delete p_sa;
 	}
-	template<typename T>
-	double calculate_set_similarity(vector<T*> &cs, vector<T*> &ra_cs)
+    void ar_attack()
+    {
+        Lppa_ar *p_sa = new Lppa_ar(this->p_graph);
+        p_sa->lpp();
+        cnt_of_attack = 0;
+        cnt_of_success = 0;
+        cout << "executing replay attack to ar:" << endl;
+        vector<LBS_User*> users = p_sa->get_users();
+        vector<bool> is_success = p_sa->get_v_success();
+        vector<vector<EC_Node*>> vv_cloak_set = p_sa->get_vv_cloak();
+        
+        for (int i = 0; i < users.size(); i++) { //对用户i的匿名集 vv_cloak[i]进行攻击
+            double maximal_similarity = 0;
+            vector<EC_Node*> maximal_edges; //最大相似度的可能有多条边
+            if (!is_success[i]) continue; //不考虑未成功的匿名
+            for (int j = 0; j < vv_cloak_set[i].size(); j++) {
+                if (vv_cloak_set[i][j]->get_users().size() < 1) continue;
+                vector<EC_Node*>sa_cs = p_sa->ec_sae(users[i], vv_cloak_set[i][j]); //假定在用户在匿名集的某条边上
+                double set_similarity = calculate_set_similarity(vv_cloak_set[i], sa_cs);
+                if (fabs(set_similarity - maximal_similarity) < 0.001) {
+                    maximal_edges.push_back(vv_cloak_set[i][j]);
+                }
+                else if (set_similarity > maximal_similarity) {
+                    maximal_similarity = set_similarity;
+                    maximal_edges.clear();
+                    maximal_edges.push_back(vv_cloak_set[i][j]);
+                }
+            }
+            int selected_index = rand() % maximal_edges.size();
+            vector<LBS_User*> users_in_edge = maximal_edges[selected_index]->get_users();
+            cnt_of_attack++;
+            if (vector_find(users_in_edge, users[i])) { //用户确实在此边上，攻击成功
+                cnt_of_success++;
+            }
+        }
+        cout << "attack nums:" << cnt_of_attack << " success nums:" << cnt_of_success << endl;
+        cout << "------" << endl;
+        delete p_sa;
+    }
+    
+    template<typename T>
+    double calculate_set_similarity(vector<T*> &cs, vector<T*> &ra_cs)
 	{
 		int size_union = cs.size();
 		int size_intersection = 0;

@@ -1,5 +1,5 @@
-#ifndef LPPA_EC_SAE_H
-#define LPPA_EC_SAE_H
+#ifndef LPPA_CFSO_H
+#define LPPA_CFSO_H
 
 /*
 SA算法隐私模型为 k,θ安全, 采用泰森多边形进行兴趣点划分
@@ -24,20 +24,21 @@ s_type_poi_pop/poi_pop_all >s_require 的定义为敏感语义
 #include <map>
 using namespace std;
 
-class Lppa_ecsa_e
+class Lppa_cfso
 {
 public:
-	Lppa_ecsa_e(EC_Graph *p_graph)
+	Lppa_cfso(EC_Graph *p_graph)
 	{
 		this->p_graph = p_graph;
 		anonymization_time_total = 0;
 		cnt_of_failure = 0;
 		cnt_of_success = 0;
 		l_max = 30;
+        query_cnt = 100000;
 		//打印当前地图状态
 		srand((unsigned)time(NULL));
 	}
-	~Lppa_ecsa_e()
+	~Lppa_cfso()
 	{
 		delete[]is_node_selecteds;
 		delete[]is_node_candidate;
@@ -51,6 +52,7 @@ public:
 		is_node_selecteds = new bool[nodes.size()];
 		is_node_candidate = new bool[nodes.size()];
 		start = clock();
+        
 		for (int i = 0; i < nodes.size(); i++) {
 			for (int j = 0; j < nodes[i]->get_users().size(); j++) {
 				pu = nodes[i]->get_users()[j];
@@ -61,6 +63,7 @@ public:
 			}
 
 		}
+        
 		finish = clock();
 		double time_cost = (double)(finish - start) / CLOCKS_PER_SEC;
 		cout << "total time consume:" << time_cost << endl;
@@ -137,24 +140,7 @@ public:
 			map<EC_Node*, pair<double, double>>::iterator it_candidate, it_maximal_score;
 			double k_score = 0, s_score = 0, struct_score = 0;
 			if (candidate_map.size() < 1) break;
-
-			/*
-			加入可控随机性
-			*/
-			double random_num = (double)rand()/RAND_MAX;
-			if (random_num < 0) {
-				int random_select = rand() % candidate_map.size();
-				it_maximal_score = candidate_map.begin();
-				int tmp_cnt = 0;
-				while (tmp_cnt < random_select) {
-					tmp_cnt++;
-					it_maximal_score++;
-				}
-				is_success = add_node_to_cloakset(pu, it_maximal_score->first, cloak_set, candidate_map);
-				is_node_candidate[it_maximal_score->first->get_id()] = false;
-				candidate_map.erase(it_maximal_score);
-				continue;
-			}
+            
 			double minimal_miss_s = numeric_limits<double>::max(), maximal_miss_s = numeric_limits<double>::min(), maximal_score = 0;
 			//--
 			for (it_candidate = candidate_map.begin(); it_candidate != candidate_map.end(); it_candidate++) { //已经计算了的就不用计算
@@ -292,6 +278,7 @@ private:
 	int cnt_of_failure;
 	vector<int> open_vetex_cnt; //将用于以权值减去环数
 	int l_max; //匿名集最多选择l_max条边,否则失败
+    int query_cnt;
 	EC_Graph *p_graph;
 };
 

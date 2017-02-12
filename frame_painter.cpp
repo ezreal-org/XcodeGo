@@ -8,7 +8,7 @@
 
 #include "frame_painter.h"
 #include <iostream>
-#include <Qpainter>
+#include <QPainter>
 using namespace std;
 
 Frame_Painter::Frame_Painter(QWidget *parent)

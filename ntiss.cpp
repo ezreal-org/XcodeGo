@@ -5,7 +5,7 @@
 #include <iostream>
 #include <QPainter>
 #include <QPixmap>
-#include "graph/lpp_algorithm/ec_sae.h"
+#include "graph/lpp_algorithm/cfso.h"
 #include "graph/lpp_algorithm/plpca.h"
 #include "graph/lpp_algorithm/replay_attack.h"
 #include "graph/lpp_algorithm/sa.h"

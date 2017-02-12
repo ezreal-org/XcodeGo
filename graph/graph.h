@@ -189,9 +189,9 @@ public:
 		LBS_User *pu = nullptr;
 		for (int i = 0; i < add_user_cnt; i++) {
 			//double s_require = 0.2 + ((double)generator->get_next_r() / generator->get_random_max()) * (0.8-0.2); // 0.2~0.8
-			double s_require = 0.2;
+			double s_require = 0.8;
 			long long u_id = users.size() + 1;
-			pu = new LBS_User(u_id, 15, 6, s_require, u_profile);
+			pu = new LBS_User(u_id, 6, 3, s_require, u_profile);
 			//先随机挑选一个等级,这个过程将考虑路段权值
 			int edge_class = generator->get_next_wr();
 			// 再从某类中随机挑一个

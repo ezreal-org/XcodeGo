@@ -11,9 +11,9 @@ u_type3={0.1,0.1,0.3,0.4,0.4,0.8}:0
 u_type4={0.9,0.4,0.4,0.1,0.4,0.1}:0
 
 [POI]
-school=1840
-hospital=2102
-market=2120
-bar=3000
-residence=3032
-company=1580
+school=900
+hospital=900
+market=1500
+bar=900
+residence=1800
+company=2400
